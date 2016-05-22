@@ -1,0 +1,32 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+version="2.0">
+
+	<persistence-unit name="mysql">
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+	<class>br.com.jsmartmarket.jpa.model.Cliente</class>
+	<class>br.com.jsmartmarket.jpa.model.Produto</class>
+	<class>br.com.jsmartmarket.jpa.model.Uf</class>
+	<class>br.com.jsmartmarket.jpa.model.Autoriza</class>
+	<class>br.com.jsmartmarket.jpa.model.Compra</class>
+	<class>br.com.jsmartmarket.jpa.model.Endereco</class>
+	<class>br.com.jsmartmarket.jpa.model.Pagamento</class>
+	<class>br.com.jsmartmarket.jpa.model.ItensCompra</class>
+	<properties>
+		<property name="javax.persistence.jdbc.driver"
+			value="com.mysql.jdbc.Driverr" />
+		<property name="javax.persistence.jdbc.url"
+			value="jdbc:mysql://rdsmysql.c8u1ssymbr2u.us-west-2.rds.amazonaws.com/jsmart" />
+		<property name="javax.persistence.jdbc.user" value="jsmart" />
+		<property name="javax.persistence.jdbc.password" value="grupofatec" />
+		<property name="hibernate.dialect"
+			value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+		<property name="hibernate.show_sql" value="true" />
+		<property name="hibernate.format_sql" value="true" />
+		<property name="hibernate.hbm2ddl.auto" value="update" />
+	</properties>
+	</persistence-unit>
+	
+</persistence>
