@@ -122,17 +122,13 @@
 
 		<div class="col s2">
 			<div class="input-field">
-				<select>
+				<select name="uf">
 					<option value="" disabled selected>Selecione aqui</option>
-					<option value="1">SP</option>
-					<!--aqui pode ser carregado pelo o banco de dados-->
-					<option value="2">MG</option>
-					<!--aqui pode ser carregado pelo o banco de dados-->
-					<option value="3">RJ</option>
-					<!--aqui pode ser carregado pelo o banco de dados-->
-				</select> <label><h6>
-						<b>UF 
-					</h6> </b></label>
+					<option value="SP">SP</option>
+					<option value="MG">MG</option>
+					<option value="RJ">RJ</option>
+				</select> 
+				<label><h6><b>UF</h6></b></label>
 			</div>
 		</div>
 
