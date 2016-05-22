@@ -24,7 +24,7 @@
 
 	<nav>
 		<div class="nav-wrapper indigo ">
-			<form class="col s4 ">
+			<form class="col s4" action="login" method="post">
 				<div class="row col s4">
 					<div class="input-image col s4	 ">
 
@@ -60,10 +60,13 @@
 			</h3>
 		</div>
 		</ul>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<a class="waves-effect red-text white btn center-right"
-				href="formulario.html""><i class="material-icons right">mode_edit</i>Cadastre-se</a>
-		</ul>
+		<form action="formulario" method="post">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<a class="waves-effect red-text white btn center-right"
+				href="formulario.html">
+				<i class="material-icons right">mode_edit</i>Cadastre-se</a>
+			</ul>
+		</form>
 	</div>
 
 	<!-- Conteudo do Site -->

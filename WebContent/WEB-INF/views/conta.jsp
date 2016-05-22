@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
@@ -20,12 +22,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-
 <body>
-
-
 	<!-- conteudo do site-->
-
 	<!--          adicionar depois <img class="logo" src="assets/media/img/img.logo.png"></img>         -->
 
 	<nav>
@@ -33,8 +31,8 @@
 			<a href="#" class="brand-logo center orange-text">Pedidos JSmart
 				Market</a>
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginainicial.html">P√°gina Inicial</a></li>
-				<li><a href="historia.html">Hist√≥ria</a></li>
+				<li><a href="paginainicial.html">P·gina Inicial</a></li>
+				<li><a href="historia.html">HistÛria</a></li>
 				<li><a href="conta.html">Sua Conta</a></li>
 			</ul>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -48,11 +46,8 @@
 	<!-- cards -->
 
 	<div class="col s12">
-
 		<div class="row">
-
 			<div class="row">
-
 				<div class="col s2">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">toc</i> <input
@@ -61,17 +56,14 @@
 						</label>
 					</div>
 				</div>
-
 				<div class="col s2 right">
 
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<a class="waves-effect waves-light btn"><i
 							class="material-icons right">search</i>Procurar</a>
 					</ul>
-
 				</div>
 			</div>
-
 		</div>
 
 		<table>
@@ -79,7 +71,7 @@
 				<tr>
 					<th data-field="id">Nome</th>
 					<th data-field="name">Produto</th>
-					<th data-field="price">Pre√ßo Unit√°rio</th>
+					<th data-field="price">PreÁoo Unit·rio</th>
 				</tr>
 			</thead>
 
@@ -101,14 +93,8 @@
 				</tr>
 			</tbody>
 		</table>
-
-
-
 	</div>
-
 	</div>
-
-
 
 	<!-- Rodape -->
 	<footer class="page-footer indigo">

@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
@@ -20,10 +22,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-
 <body>
-
-
 	<!-- conteudo do site-->
 
 	<!--          adicionar depois <img class="logo" src="assets/media/img/img.logo.png"></img>         -->
@@ -31,11 +30,11 @@
 	<nav>
 		<div class="nav-wrapper indigo">
 			<a href="#" class="brand-logo center green-text text-accent-3">Um
-				pouco sobre Ã  JSmartMarket</a>
+				pouco sobre o JSmartMarket</a>
 
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginainicial.html">PÃ¡gina Inicial</a></li>
-				<li><a href="historia.html">HistÃ³ria</a></li>
+				<li><a href="paginainicial.html">Página Inicial</a></li>
+				<li><a href="historia.html">História</a></li>
 				<li><a href="conta.html">Sua Conta</a></li>
 			</ul>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -49,9 +48,8 @@
 	<!-- cards -->
 
 	<div class="row center red-text text-lighten-2">
-		<h3>ProtÃ³tipo do Carrinho inteligente JSmartMarket</h3>
+		<h3>Protótipo do Carrinho inteligente JSmartMarket</h3>
 	</div>
-
 
 	<div class="carousel">
 		<a class="carousel-item" href="#one!"><img
@@ -73,24 +71,19 @@
 
 	<div class="row s2 ">
 
-
-
 		<div class="col s6 ">
 			<div class="video-container">
 				<iframe width="853" height="800" src="assets/media/video/video.mp4"
 					frameborder="0" allowfullscreen></iframe>
 			</div>
-
-
 		</div>
-
 
 		<div class="col s6 left">
 			<div class="card-panel red lighten-2">
 				<span class="white-text"><h5>O sistema de anti-fraude da
-						JSmartMarket, requer a sincronizaÃ§Ã£o dos sensores de movimento
+						JSmartMarket, requer a sincronização dos sensores de movimento
 						juntamente com a placa Raspberry. A Placa identifica qualquer
-						produto que Ã© colocado dentro do carrinho JSmartMarket.</h5></span>
+						produto que é colocado dentro do carrinho JSmartMarket.</h5></span>
 			</div>
 		</div>
 
@@ -100,8 +93,6 @@
 		<h5>Video Demonstrativo</h5>
 	</div>
 </body>
-
-
 
 <!-- Rodape -->
 <footer class="page-footer indigo">

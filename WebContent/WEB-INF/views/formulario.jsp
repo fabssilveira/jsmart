@@ -1,4 +1,6 @@
-<!DOCTYPE>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
@@ -41,7 +43,7 @@
 
 	<div class="container">
 
-		<form class="col s12" action="gravaCliente"	method="Post">
+		<form class="col s12" action="gravaCliente" method="Post">
 
 			<!-- Nome e Sobre Nome -->
 
@@ -78,9 +80,9 @@
 		<div class="col s4">
 			<div class="input-field ">
 				<i class="material-icons prefix blue-text text-indigo">
-					mode_edit</i> <input id="endereÃ§o" name="logradouro" type="text"
+					mode_edit</i> <input id="endereço" name="logradouro" type="text"
 					class="validate"> <label for="endereÃ§o"><h6>
-						<b>EndereÃ§o</b>
+						<b>Endereço</b>
 					</h6></label>
 			</div>
 		</div>
@@ -89,7 +91,7 @@
 			<div class="input-field">
 				<input id="numero" name="numero" type="text" class="validate">
 				<label for="numero"><h6>
-						<b>NÃºmero</b>
+						<b>Número</b>
 					</h6></label>
 			</div>
 		</div>
