@@ -9,9 +9,7 @@ version="2.0">
 	<class>br.com.jsmartmarket.jpa.model.Cliente</class>
 	<class>br.com.jsmartmarket.jpa.model.Produto</class>
 	<class>br.com.jsmartmarket.jpa.model.Uf</class>
-	<class>br.com.jsmartmarket.jpa.model.Autoriza</class>
 	<class>br.com.jsmartmarket.jpa.model.Compra</class>
-	<class>br.com.jsmartmarket.jpa.model.Endereco</class>
 	<class>br.com.jsmartmarket.jpa.model.Pagamento</class>
 	<class>br.com.jsmartmarket.jpa.model.ItensCompra</class>
 	<properties>

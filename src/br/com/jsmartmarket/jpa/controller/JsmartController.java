@@ -1,25 +1,23 @@
 package br.com.jsmartmarket.jpa.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.jsmartmarket.jpa.dao.AutorizaDao;
 import br.com.jsmartmarket.jpa.dao.ClienteDao;
-import br.com.jsmartmarket.jpa.dao.EnderecoDao;
-import br.com.jsmartmarket.jpa.model.Autoriza;
 import br.com.jsmartmarket.jpa.model.Cliente;
-import br.com.jsmartmarket.jpa.model.Endereco;
 
 @Controller
 public class JsmartController {
 
 	@RequestMapping("/gravaCliente")
-	public String formulario(Endereco endereco, Cliente cliente, Autoriza autoriza){
-		
-		new EnderecoDao().salvar(endereco);
+	public String formulario(Cliente cliente){
+		String senha = gerarSenha(cliente.getSenha());
+		cliente.setSenha(senha);
 		new ClienteDao().salvar(cliente);
-		new AutorizaDao().salvar(autoriza);
-		
 		return "formulario";
 	}
 
@@ -36,6 +34,23 @@ public class JsmartController {
 	@RequestMapping("/suaConta")
 	public String conta(){
 		return "conta";
+	}
+	
+	public String gerarSenha(String senha){
+		String valorParaSenha = senha;
+		MessageDigest algorithm;
+		try {
+			algorithm = MessageDigest.getInstance("SHA-256");
+			byte messageDigest[] = algorithm.digest(valorParaSenha.getBytes("UTF-8"));
+			StringBuilder hexString = new StringBuilder();
+			for (byte b : messageDigest) {
+			  hexString.append(String.format("%02X", 0xFF & b));
+			}
+			senha = hexString.toString();
+		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		return senha;
 	}
 	
 }
