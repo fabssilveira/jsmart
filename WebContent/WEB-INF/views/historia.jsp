@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,8 +33,8 @@
 				pouco sobre o JSmartMarket</a>
 
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginainicial.html">Página Inicial</a></li>
-				<li><a href="historia.html">História</a></li>
+				<li><a href="paginainicial.html">PÃ¡gina Inicial</a></li>
+				<li><a href="historia.html">HistÃ³ria</a></li>
 				<li><a href="conta.html">Sua Conta</a></li>
 			</ul>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -48,7 +48,7 @@
 	<!-- cards -->
 
 	<div class="row center red-text text-lighten-2">
-		<h3>Protótipo do Carrinho inteligente JSmartMarket</h3>
+		<h3>ProtÃ³tipo do Carrinho inteligente JSmartMarket</h3>
 	</div>
 
 	<div class="carousel">
@@ -81,9 +81,9 @@
 		<div class="col s6 left">
 			<div class="card-panel red lighten-2">
 				<span class="white-text"><h5>O sistema de anti-fraude da
-						JSmartMarket, requer a sincronização dos sensores de movimento
+						JSmartMarket, requer a sincronizaÃ§Ã£o dos sensores de movimento
 						juntamente com a placa Raspberry. A Placa identifica qualquer
-						produto que é colocado dentro do carrinho JSmartMarket.</h5></span>
+						produto que Ã© colocado dentro do carrinho JSmartMarket.</h5></span>
 			</div>
 		</div>
 

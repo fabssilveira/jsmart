@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,8 +29,8 @@
 				Market</a>
 
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginainicial.html">P·gina Inicial</a></li>
-				<li><a href="historia.html">HistÛria</a></li>
+				<li><a href="paginainicial.html">P√°gina Inicial</a></li>
+				<li><a href="historia.html">Hist√≥ria</a></li>
 				<li><a href="conta.html">Sua Conta</a></li>
 			</ul>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -52,20 +52,20 @@
 			<li><img src="assets/media/img/img.desafios.jpg"> <!-- random image -->
 				<div class="caption orange-text left-align">
 					<h3>Planejamento!</h3>
-					<h5 class="light orange-text text-lighten-3">VocÍ precisa
+					<h5 class="light orange-text text-lighten-3">Voc√™ precisa
 						manter o foco em sua jornada para realizar grandes coisas.</h5>
 				</div></li>
 			<li><img src="assets/media/img/img.arvores.jpg"> <!-- random image -->
 				<div class="caption right-align">
 					<h3>Conquistas!</h3>
-					<h5 class="light grey-text text-lighten-3">N„o basta
-						conquistar a sabedoria, … preciso us·-la.</h5>
+					<h5 class="light grey-text text-lighten-3">N√£o basta
+						conquistar a sabedoria, √â preciso us√°-la.</h5>
 				</div></li>
 			<li><img src="assets/media/img/img.aventura.jpg"> <!-- random image -->
 				<div class="caption black-text center-align">
 					<h3>Barreiras!</h3>
 					<h5 class="light black-text text-lighten-3">Quanto mais
-						difÌcil fica, mais prÛximo est· o sucesso.</h5>
+						dif√≠cil fica, mais pr√≥ximo est√° o sucesso.</h5>
 				</div></li>
 		</ul>
 	</div>
@@ -85,18 +85,18 @@
 				</div>
 				<div class="card-content">
 					<p>Estudos monstram que apenas 15% das companhias brasileiras
-						n„o rodam soluÁıes em cloud.</p>
+						n√£o rodam solu√ß√µes em cloud.</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="col s3">
 			<div class="card-panel teal orange darken-1">
-				<span class="white-text">A adoÁ„oo da nuvem j· est· quase
-					onipresente nas empresas brasileiras. Pelo menos È o que constatou
+				<span class="white-text">A ado√ß√£oo da nuvem j√° est√° quase
+					onipresente nas empresas brasileiras. Pelo menos √© o que constatou
 					uma pesquisa da SolarWinds. Segundo o levantamento, apenas 15% das
-					companhias n„o migraram parte de sua TI para um ambiente cloud. Da
-					maioria que j· realizou esse movimento, 66% moveram aplicativos,
+					companhias n√£o migraram parte de sua TI para um ambiente cloud. Da
+					maioria que j√° realizou esse movimento, 66% moveram aplicativos,
 					36% levaram recursos de armazenamento e 35% migraram seus bancos de
 					dados para a nuvem. </span>
 			</div>
@@ -109,8 +109,8 @@
 			<div class="card-panel teal">
 				<span class="white-text">A Intel anunciou a compra da
 					Yogitech, fabricante de circuitos e software focada em recursos de
-					seguranÁa para carros autÙnomos, robÙs e equipamentos industriais
-					conectados a rede. O valor da transaÁ„o n„o foi revelado. </span>
+					seguran√ßa para carros aut√¥nomos, rob√¥s e equipamentos industriais
+					conectados a rede. O valor da transa√ß√£o n√£o foi revelado. </span>
 			</div>
 		</div>
 
@@ -121,8 +121,8 @@
 						class="card-title red-text"></span>
 				</div>
 				<div class="card-content">
-					<p>Intel compra empresa focada em seguranÁa de IoT, robÙs e
-						carros autÙnomos.</p>
+					<p>Intel compra empresa focada em seguran√ßa de IoT, rob√¥s e
+						carros aut√¥nomos.</p>
 				</div>
 			</div>
 		</div>

@@ -4,9 +4,11 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import br.com.jsmartmarket.jpa.util.HibernateUtil;
 import br.com.jsmartmarket.jpa.util.JPAUtil;
 
-public class DaoGenerico<PK, T> {
+public class DaoGenerico<PK, T> extends HibernateUtil{
 	EntityManager em = JPAUtil.getEntityManager();
 	protected void init(){
 		JPAUtil.init();
@@ -42,7 +44,7 @@ public class DaoGenerico<PK, T> {
 	public T buscaPorId(T modelo, long id){
 		return (T) em.find(modelo.getClass(), id);
 	}
-	
+			
 	private Class<?> getTypeClass(){
 		Class<?> clazz = (Class<?>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
 		return clazz;

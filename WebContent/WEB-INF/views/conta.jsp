@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,8 +31,8 @@
 			<a href="#" class="brand-logo center orange-text">Pedidos JSmart
 				Market</a>
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginainicial.html">P·gina Inicial</a></li>
-				<li><a href="historia.html">HistÛria</a></li>
+				<li><a href="paginainicial.html">P√°gina Inicial</a></li>
+				<li><a href="historia.html">Hist√≥ria</a></li>
 				<li><a href="conta.html">Sua Conta</a></li>
 			</ul>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -71,7 +71,7 @@
 				<tr>
 					<th data-field="id">Nome</th>
 					<th data-field="name">Produto</th>
-					<th data-field="price">PreÁoo Unit·rio</th>
+					<th data-field="price">Pre√ßoo Unit√°rio</th>
 				</tr>
 			</thead>
 

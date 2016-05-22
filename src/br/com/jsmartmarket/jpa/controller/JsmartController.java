@@ -3,12 +3,17 @@ package br.com.jsmartmarket.jpa.controller;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.jsmartmarket.jpa.dao.ClienteDao;
 import br.com.jsmartmarket.jpa.model.Cliente;
+import br.com.jsmartmarket.jpa.model.Uf;
 
 @Controller
 public class JsmartController {
@@ -22,8 +27,14 @@ public class JsmartController {
 	}
 
 	@RequestMapping("/login")
-	public String paginaInicial(){
-		return "paginaInicial";
+	public String paginaInicial(Cliente cliente, HttpSession session){
+		String senha = gerarSenha(cliente.getSenha());
+		Cliente autorizado = new ClienteDao().findUserLogin(cliente.getUserLogin());
+		if(autorizado.getSenha().equals(senha)){
+			session.setAttribute("usuarioLogado", autorizado);
+			return "paginaInicial";
+		}
+		return "formulario";
 	}
 	
 	@RequestMapping("/historia")

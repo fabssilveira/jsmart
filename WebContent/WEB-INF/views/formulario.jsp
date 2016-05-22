@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -73,16 +73,16 @@
 	</div>
 
 
-	<!-- endereço -->
+	<!-- endereÃ§o -->
 
 	<div class="row">
 
 		<div class="col s4">
 			<div class="input-field ">
 				<i class="material-icons prefix blue-text text-indigo">
-					mode_edit</i> <input id="endere�o" name="logradouro" type="text"
-					class="validate"> <label for="endereço"><h6>
-						<b>Endere�o</b>
+					mode_edit</i> <input id="endereço" name="logradouro" type="text"
+					class="validate"> <label for="endereÃ§o"><h6>
+						<b>Endereço</b>
 					</h6></label>
 			</div>
 		</div>
@@ -91,7 +91,7 @@
 			<div class="input-field">
 				<input id="numero" name="numero" type="text" class="validate">
 				<label for="numero"><h6>
-						<b>N�mero</b>
+						<b>Número</b>
 					</h6></label>
 			</div>
 		</div>

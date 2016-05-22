@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>  
 <!DOCTYPE>
 <html>
 <head>
@@ -71,7 +75,7 @@
 	</div>
 
 
-	<!-- endereço -->
+	<!-- endereÃ§o -->
 
 	<div class="row">
 
@@ -125,6 +129,7 @@
 					<option value="SP">SP</option>
 					<option value="MG">MG</option>
 					<option value="RJ">RJ</option>
+				</select> 
 				</select> 
 				<label><h6><b>UF</h6></b></label>
 			</div>
