@@ -16,7 +16,7 @@ version="2.0">
 	<class>br.com.jsmartmarket.jpa.model.ItensCompra</class>
 	<properties>
 		<property name="javax.persistence.jdbc.driver"
-			value="com.mysql.jdbc.Driverr" />
+			value="com.mysql.jdbc.Driver" />
 		<property name="javax.persistence.jdbc.url"
 			value="jdbc:mysql://rdsmysql.c8u1ssymbr2u.us-west-2.rds.amazonaws.com/jsmart" />
 		<property name="javax.persistence.jdbc.user" value="jsmart" />
