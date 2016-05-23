@@ -31,12 +31,13 @@
 			<a href="#" class="brand-logo center orange-text">Pedidos JSmart
 				Market</a>
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginainicial.html">Página Inicial</a></li>
-				<li><a href="historia.html">História</a></li>
-				<li><a href="conta.html">Sua Conta</a></li>
+				<li><a href="paginaInicial">Página Inicial</a></li>
+				<li><a href="historia">História</a></li>
+				<li><a href="conta">Sua Conta</a></li>
 			</ul>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<a class="waves-effect waves-light red-text orange btn-large center"
+					href="logoff"
 					id="logoff"><i class="material-icons right red-text">power_settings_new</i>Logoff</a>
 			</ul>
 		</div>
@@ -71,7 +72,7 @@
 				<tr>
 					<th data-field="id">Nome</th>
 					<th data-field="name">Produto</th>
-					<th data-field="price">Preçoo Unitário</th>
+					<th data-field="price">Preço Unitário</th>
 				</tr>
 			</thead>
 

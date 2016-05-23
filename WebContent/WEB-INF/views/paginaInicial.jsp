@@ -29,12 +29,13 @@
 				Market</a>
 
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginainicial.html">Página Inicial</a></li>
-				<li><a href="historia.html">História</a></li>
-				<li><a href="conta.html">Sua Conta</a></li>
+				<li><a href="paginaInicial">Página Inicial</a></li>
+				<li><a href="historia">História</a></li>
+				<li><a href="conta">Sua Conta</a></li>
 			</ul>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<a class="waves-effect waves-light red-text orange btn-large"
+					href="logoff"
 					id="logoff"><i class="material-icons right red-text">power_settings_new</i>Logoff</a>
 			</ul>
 		</div>
@@ -92,7 +93,7 @@
 
 		<div class="col s3">
 			<div class="card-panel teal orange darken-1">
-				<span class="white-text">A adoçãoo da nuvem já está quase
+				<span class="white-text">A adoção da nuvem já está quase
 					onipresente nas empresas brasileiras. Pelo menos é o que constatou
 					uma pesquisa da SolarWinds. Segundo o levantamento, apenas 15% das
 					companhias não migraram parte de sua TI para um ambiente cloud. Da

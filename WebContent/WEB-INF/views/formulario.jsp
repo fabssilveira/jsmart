@@ -81,7 +81,7 @@
 			<div class="input-field ">
 				<i class="material-icons prefix blue-text text-indigo">
 					mode_edit</i> <input id="endereço" name="logradouro" type="text"
-					class="validate"> <label for="endereÃ§o"><h6>
+					class="validate"> <label for="endereço"><h6>
 						<b>Endereço</b>
 					</h6></label>
 			</div>
