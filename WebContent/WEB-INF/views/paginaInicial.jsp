@@ -47,8 +47,7 @@
 			<li><img src="assets/media/img/img.sonhando.jpg"> <!-- random image -->
 				<div class="caption green-text center-align">
 					<h3>JSmart Market!</h3>
-					<h5 class="light green-text text-lighten-3">Sonhando alto
-						sempre.</h5>
+					<h5 class="light green-text text-lighten-3">O carrinho de supermercado inteligente.</h5>
 				</div></li>
 			<li><img src="assets/media/img/img.desafios.jpg"> <!-- random image -->
 				<div class="caption orange-text left-align">
