@@ -21,7 +21,7 @@ version="2.0">
 		<property name="javax.persistence.jdbc.password" value="grupofatec" />
 		<property name="hibernate.dialect"
 			value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-		<property name="hibernate.show_sql" value="true" />
+		<property name="hibernate.show_sql" value="false" />
 		<property name="hibernate.format_sql" value="true" />
 		<property name="hibernate.hbm2ddl.auto" value="update" />
 	</properties>
