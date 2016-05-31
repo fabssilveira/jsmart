@@ -28,5 +28,5 @@ public class ClienteDao extends DaoGenerico<Long, Cliente>{
             close();
         }
     }
-					
+							
 }

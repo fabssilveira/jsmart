@@ -42,6 +42,7 @@ public class JsmartController {
 		}
 		if(autorizado.getSenha().equals(senha)){
 			session.setAttribute("usuarioLogado", autorizado);
+			session.setAttribute("login", autorizado.getUserLogin());
 			return "paginaInicial";
 		}
 		return "redirect:index.html";

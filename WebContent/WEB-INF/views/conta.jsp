@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,20 +28,20 @@
 	<!--          adicionar depois <img class="logo" src="assets/media/img/img.logo.png"></img>         -->
 
 	<nav>
-		<div class="nav-wrapper indigo">
-			<a href="#" class="brand-logo center orange-text">Pedidos JSmart
-				Market</a>
-			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginaInicial">Página Inicial</a></li>
-				<li><a href="historia">História</a></li>
-				<li><a href="conta">Sua Conta</a></li>
-			</ul>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<a class="waves-effect waves-light red-text orange btn-large center"
-					href="logoff"
-					id="logoff"><i class="material-icons right red-text">power_settings_new</i>Logoff</a>
-			</ul>
-		</div>
+	<div class="nav-wrapper indigo">
+		<a href="#" class="brand-logo center orange-text">Pedidos JSmart
+			Market</a>
+		<ul id="nav-mobile" class="left hide-on-med-and-down">
+			<li><a href="paginaInicial">Página Inicial</a></li>
+			<li><a href="historia">História</a></li>
+			<li><a href="conta">Sua Conta</a></li>
+		</ul>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<a class="waves-effect waves-light red-text orange btn-large center"
+				href="logoff" id="logoff"><i
+				class="material-icons right red-text">power_settings_new</i>Logoff</a>
+		</ul>
+	</div>
 
 	</nav>
 
@@ -67,15 +68,27 @@
 			</div>
 		</div>
 
+		<jsp:useBean id="clienteDao" class="br.com.jsmartmarket.jpa.dao.ClienteDao"/>	
+		<jsp:useBean id="ProdutoDao" class="br.com.jsmartmarket.jpa.dao.ProdutoDao"/>
+		<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente"/>	
+		<jsp:useBean id="produto" class="br.com.jsmartmarket.jpa.model.Produto"/>
+		<%if(session.getAttribute("usuarioLogado") != null){ %>
+		
+			<%String login = ""+session.getAttribute("login");%>
+			<%cliente = clienteDao.findUserLogin(login);%>
+			<%System.out.println(cliente.getNome());%>
+		
+		<%}%>
 		<table>
 			<thead>
 				<tr>
-					<th data-field="id">Nome</th>
-					<th data-field="name">Produto</th>
-					<th data-field="price">Preço Unitário</th>
+					<th data-field="id">Compra</th>
+					<th data-field="data">Data</th>
+					<th data-field="valor">Valor</th>
 				</tr>
 			</thead>
 
+			
 			<tbody>
 				<tr>
 					<td>Skol 350ml</td>
@@ -99,9 +112,9 @@
 
 	<!-- Rodape -->
 	<footer class="page-footer indigo">
-		<div class="footer-copyright">
-			<div class="container center">2016 Copyright JSmart Market</div>
-		</div>
+	<div class="footer-copyright">
+		<div class="container center">2016 Copyright JSmart Market</div>
+	</div>
 	</footer>
 
 	<!--Import JavaScript-->
