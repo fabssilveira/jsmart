@@ -1,6 +1,5 @@
 package br.com.jsmartmarket.jpa.model;
 
-import java.util.Calendar;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

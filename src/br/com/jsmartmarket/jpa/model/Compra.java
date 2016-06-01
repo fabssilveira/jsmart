@@ -1,6 +1,5 @@
 package br.com.jsmartmarket.jpa.model;
 
-import java.util.Calendar;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +12,7 @@ public class Compra {
 	private int codigoCompra;
 	private int codigoCliente;
 	private int codigoPagamento;
-	private Calendar dataCompra;
+	private String dataCompra;
 	
 	public int getCodigoCompra() {
 		return codigoCompra;
@@ -33,10 +32,10 @@ public class Compra {
 	public void setCodigoPagamento(int codigoPagamento) {
 		this.codigoPagamento = codigoPagamento;
 	}
-	public Calendar getDataCompra() {
+	public String getDataCompra() {
 		return dataCompra;
 	}
-	public void setDataCompra(Calendar dataCompra) {
+	public void setDataCompra(String dataCompra) {
 		this.dataCompra = dataCompra;
 	}
 	

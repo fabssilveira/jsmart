@@ -3,6 +3,7 @@ package br.com.jsmartmarket.jpa.controller;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,7 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.jsmartmarket.jpa.dao.ClienteDao;
+import br.com.jsmartmarket.jpa.dao.CompraDao;
 import br.com.jsmartmarket.jpa.model.Cliente;
+import br.com.jsmartmarket.jpa.model.Compra;
 
 @Controller
 public class JsmartController {
@@ -100,6 +103,18 @@ public class JsmartController {
 			e.printStackTrace();
 		}
 		return senha;
+	}
+	
+	@RequestMapping("/teste")
+	public String teste(){
+		List<Compra> lista = new CompraDao().findCompra(7);
+		CalcularCompra calculo = new CalcularCompra();
+		for(Compra compra: lista){
+			System.out.println(compra.getCodigoCompra());
+			System.out.println(compra.getDataCompra());
+			System.out.println(calculo.calcular(compra.getCodigoCompra()));
+		}
+		return "redirect:index.html";
 	}
 	
 }

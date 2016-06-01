@@ -69,44 +69,38 @@
 		</div>
 
 		<jsp:useBean id="clienteDao" class="br.com.jsmartmarket.jpa.dao.ClienteDao"/>	
-		<jsp:useBean id="ProdutoDao" class="br.com.jsmartmarket.jpa.dao.ProdutoDao"/>
+		<jsp:useBean id="compraDao" class="br.com.jsmartmarket.jpa.dao.CompraDao"/>
+		<jsp:useBean id="pagamentoDao" class="br.com.jsmartmarket.jpa.dao.PagamentoDao"/>
 		<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente"/>	
-		<jsp:useBean id="produto" class="br.com.jsmartmarket.jpa.model.Produto"/>
+		<jsp:useBean id="compra" class="br.com.jsmartmarket.jpa.model.Compra"/>
+		<jsp:useBean id="pagamento" class="br.com.jsmartmarket.jpa.model.Pagamento"/>
+		<jsp:useBean id="calculo" class="br.com.jsmartmarket.jpa.controller.CalcularCompra"/>
 		<%if(session.getAttribute("usuarioLogado") != null){ %>
 		
 			<%String login = ""+session.getAttribute("login");%>
 			<%cliente = clienteDao.findUserLogin(login);%>
-			<%System.out.println(cliente.getNome());%>
-		
+					
+			<table>
+				<thead>
+					<tr>
+						<th data-field="id">Compra</th>
+						<th data-field="data">Data</th>
+						<th data-field="valor">Valor</th>
+					</tr>
+				</thead>
+				<%System.out.println("teste"); %>
+								
+				<c:forEach var="lista" items="${compraDao.findCompra(cliente.getCodigoCliente())}">	
+				<tbody>
+					<tr>
+						<td>${lista.codigoCompra}</td>
+						<td>${lista.dataCompra}</td>
+						<td>&{calculo.calcular(lista.codigoCompra)}</td>
+					</tr>
+				</tbody>
+				</c:forEach>
+			</table>
 		<%}%>
-		<table>
-			<thead>
-				<tr>
-					<th data-field="id">Compra</th>
-					<th data-field="data">Data</th>
-					<th data-field="valor">Valor</th>
-				</tr>
-			</thead>
-
-			
-			<tbody>
-				<tr>
-					<td>Skol 350ml</td>
-					<td>Cerveja</td>
-					<td>R$ 1,99</td>
-				</tr>
-				<tr>
-					<td>Coca-Cola 2L</td>
-					<td>Refrigerante</td>
-					<td>R$ 5,99</td>
-				</tr>
-				<tr>
-					<td>Ketchup Quero 400g</td>
-					<td>Condimento</td>
-					<td>R$ 3,19</td>
-				</tr>
-			</tbody>
-		</table>
 	</div>
 	</div>
 
