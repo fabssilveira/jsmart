@@ -5,10 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.com.jsmartmarket.jpa.util.HibernateUtil;
 import br.com.jsmartmarket.jpa.util.JPAUtil;
 
-public class DaoGenerico<PK, T> extends HibernateUtil{
+public class DaoGenerico<PK, T>{
 	EntityManager em = JPAUtil.getEntityManager();
 	protected void init(){
 		JPAUtil.init();

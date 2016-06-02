@@ -11,22 +11,5 @@ public class ClienteDao extends DaoGenerico<Long, Cliente>{
 		super.salvar(cliente);				
 	}
 	
-	public Cliente findUserLogin(String login) {
-        try {
-            return (Cliente) getSession().createCriteria(Cliente.class)
-                .add(Restrictions.eq("userLogin", login)).uniqueResult();
-        } finally {
-            close();
-        }
-    }
-	
-	public Cliente findUserCpf(String cpf) {
-        try {
-            return (Cliente) getSession().createCriteria(Cliente.class)
-                .add(Restrictions.eq("cpf", cpf)).uniqueResult();
-        } finally {
-            close();
-        }
-    }
-							
+								
 }

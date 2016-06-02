@@ -24,14 +24,14 @@ public class JsmartController {
 		cliente.setSenha(senha);
 		Cliente cadastro = new Cliente();
 		
-		cadastro = new ClienteDao().findUserCpf(cliente.getCpf());
+		/*cadastro = new ClienteDao().findUserCpf(cliente.getCpf());
 		if(cadastro != null){
 			return "formulario2";
 		}
 		cadastro = new ClienteDao().findUserLogin(cliente.getUserLogin());
 		if(cadastro != null){
 			return "formulario2";
-		}	
+		}*/	
 		new ClienteDao().salvar(cliente);
 		return "redirect:index.html";
 	}
@@ -39,7 +39,7 @@ public class JsmartController {
 	@RequestMapping("/login")
 	public String paginaInicial(Cliente cliente, HttpSession session){
 		String senha = gerarSenha(cliente.getSenha());
-		Cliente autorizado = new ClienteDao().findUserLogin(cliente.getUserLogin());
+		/*Cliente autorizado = new ClienteDao().findUserLogin(cliente.getUserLogin());
 		if(autorizado == null){
 			return "formulario";
 		}
@@ -47,7 +47,7 @@ public class JsmartController {
 			session.setAttribute("usuarioLogado", autorizado);
 			session.setAttribute("login", autorizado.getUserLogin());
 			return "paginaInicial";
-		}
+		}*/
 		return "redirect:index.html";
 	}
 	
@@ -104,17 +104,5 @@ public class JsmartController {
 		}
 		return senha;
 	}
-	
-	@RequestMapping("/teste")
-	public String teste(){
-		List<Compra> lista = new CompraDao().findCompra(7);
-		CalcularCompra calculo = new CalcularCompra();
-		for(Compra compra: lista){
-			System.out.println(compra.getCodigoCompra());
-			System.out.println(compra.getDataCompra());
-			System.out.println(calculo.calcular(compra.getCodigoCompra()));
-		}
-		return "redirect:index.html";
-	}
-	
+			
 }
