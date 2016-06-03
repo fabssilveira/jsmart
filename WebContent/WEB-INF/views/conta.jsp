@@ -81,8 +81,11 @@
 						<%="Bem vindo " + cliente.getNome() + " " + cliente.getSobrenome()%>
 					</h4>
 				</div>
-				<div class="col s2">
-					<h4 class="blue-text text-indigo">Compras</h4>
+				<div class="col s2 right">
+					<ul id="nav‐mobile" class="right hide‐on‐med‐and‐down">
+						<a class="waves‐effect waves‐light btn"><i
+						class="material‐icons right">search</i>Procurar</a>
+					</ul>
 				</div>
 			</div>
 		</div>
