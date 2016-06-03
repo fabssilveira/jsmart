@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*,
+	br.com.jsmartmarket.jpa.model.Compra,
+	br.com.jsmartmarket.jpa.model.ItensCompra" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -70,35 +74,33 @@
 
 		<jsp:useBean id="clienteDao" class="br.com.jsmartmarket.jpa.dao.ClienteDao"/>	
 		<jsp:useBean id="compraDao" class="br.com.jsmartmarket.jpa.dao.CompraDao"/>
-		<jsp:useBean id="pagamentoDao" class="br.com.jsmartmarket.jpa.dao.PagamentoDao"/>
-		<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente"/>	
-		<jsp:useBean id="compra" class="br.com.jsmartmarket.jpa.model.Compra"/>
-		<jsp:useBean id="pagamento" class="br.com.jsmartmarket.jpa.model.Pagamento"/>
-		<jsp:useBean id="calculo" class="br.com.jsmartmarket.jpa.controller.CalcularCompra"/>
+		<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente"/>
+		<jsp:useBean id="calculo" class="br.com.jsmartmarket.jpa.controller.CalcularCompra"/>		
 		<%if(session.getAttribute("usuarioLogado") != null){ %>
 		
 			<%String login = ""+session.getAttribute("login");%>
-			<%cliente = clienteDao.findUserLogin(login);%>
+			<%cliente = clienteDao.buscaLogin(login);%>
 					
 			<table>
 				<thead>
 					<tr>
 						<th data-field="id">Compra</th>
 						<th data-field="data">Data</th>
-						<th data-field="valor">Valor</th>
+						<th data-field="valor">Valor da Compra</th>
 					</tr>
 				</thead>
-				<%System.out.println("teste"); %>
-								
-				<c:forEach var="lista" items="${compraDao.findCompra(cliente.getCodigoCliente())}">	
+				<%System.out.println("Cliente: "+cliente.getUserLogin()); %>
+				<%List<Compra> compras = compraDao.buscaCompras(7); %>				
+				
+				<%for(Compra compra: compras){ %>
 				<tbody>
 					<tr>
-						<td>${lista.codigoCompra}</td>
-						<td>${lista.dataCompra}</td>
-						<td>&{calculo.calcular(lista.codigoCompra)}</td>
+						<td><%=compra.getCodigoCompra() %></td>
+						<td><%=compra.getDataCompra() %></td>
+						<td><%=calculo.calcular(compra.getCodigoCompra()) %>
 					</tr>
 				</tbody>
-				</c:forEach>
+				<%}%>
 			</table>
 		<%}%>
 	</div>

@@ -3,17 +3,13 @@ package br.com.jsmartmarket.jpa.controller;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.jsmartmarket.jpa.dao.ClienteDao;
-import br.com.jsmartmarket.jpa.dao.CompraDao;
 import br.com.jsmartmarket.jpa.model.Cliente;
-import br.com.jsmartmarket.jpa.model.Compra;
 
 @Controller
 public class JsmartController {
@@ -24,14 +20,14 @@ public class JsmartController {
 		cliente.setSenha(senha);
 		Cliente cadastro = new Cliente();
 		
-		/*cadastro = new ClienteDao().findUserCpf(cliente.getCpf());
+		cadastro = new ClienteDao().buscaCpf(cliente.getCpf());
 		if(cadastro != null){
 			return "formulario2";
 		}
-		cadastro = new ClienteDao().findUserLogin(cliente.getUserLogin());
+		cadastro = new ClienteDao().buscaLogin(cliente.getUserLogin());
 		if(cadastro != null){
 			return "formulario2";
-		}*/	
+		}	
 		new ClienteDao().salvar(cliente);
 		return "redirect:index.html";
 	}
@@ -39,7 +35,7 @@ public class JsmartController {
 	@RequestMapping("/login")
 	public String paginaInicial(Cliente cliente, HttpSession session){
 		String senha = gerarSenha(cliente.getSenha());
-		/*Cliente autorizado = new ClienteDao().findUserLogin(cliente.getUserLogin());
+		Cliente autorizado = new ClienteDao().buscaLogin(cliente.getUserLogin());
 		if(autorizado == null){
 			return "formulario";
 		}
@@ -47,7 +43,7 @@ public class JsmartController {
 			session.setAttribute("usuarioLogado", autorizado);
 			session.setAttribute("login", autorizado.getUserLogin());
 			return "paginaInicial";
-		}*/
+		}
 		return "redirect:index.html";
 	}
 	
@@ -104,5 +100,6 @@ public class JsmartController {
 		}
 		return senha;
 	}
-			
+	
+				
 }
