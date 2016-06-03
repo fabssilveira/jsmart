@@ -84,6 +84,14 @@ public class JsmartController {
 		return "redirect:index.html";
 	}
 	
+	@RequestMapping("/compra")
+	public String detalhaCompra(HttpSession session){
+		if(session.getAttribute("usuarioLogado") != null){
+			return "compra";
+		}
+		return "redirect:index.html";
+	}
+	
 	public String gerarSenha(String senha){
 		String valorParaSenha = senha;
 		MessageDigest algorithm;

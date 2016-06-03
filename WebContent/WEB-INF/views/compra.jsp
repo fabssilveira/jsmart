@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page
-	import="java.util.*,
+<%@ page import="java.util.*,
 	br.com.jsmartmarket.jpa.model.Compra,
-	br.com.jsmartmarket.jpa.model.ItensCompra"%>
+	br.com.jsmartmarket.jpa.model.ItensCompra" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,15 +28,6 @@
 </head>
 
 <body>
-
-	<jsp:useBean id="clienteDao"
-		class="br.com.jsmartmarket.jpa.dao.ClienteDao" />
-	<jsp:useBean id="compraDao"
-		class="br.com.jsmartmarket.jpa.dao.CompraDao" />
-	<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente" />
-	<jsp:useBean id="calculo"
-		class="br.com.jsmartmarket.jpa.controller.CalcularCompra" />
-
 	<!-- conteudo do site-->
 	<!--          adicionar depois <img class="logo" src="assets/media/img/img.logo.png"></img>         -->
 
@@ -62,58 +52,35 @@
 	<!-- cards -->
 
 	<div class="col s12">
-
-		<%
-			if (session.getAttribute("usuarioLogado") != null) {
-		%>
-
-		<%
-			String login = "" + session.getAttribute("login");
-		%>
-		<%
-			cliente = clienteDao.buscaLogin(login);
-		%>
-
-		<div class="row">
-			<div class="row">
-				<div class="col s10">
-					<h4 class="blue-text text-indigo"> 
-						<%="Bem vindo " + cliente.getNome() + " " + cliente.getSobrenome()%>
-					</h4>
-				</div>
-				<div class="col s2">
-					<h4 class="blue-text text-indigo">Compras</h4>
-				</div>
-			</div>
-		</div>
-
-		<table>
-			<thead>
-				<tr>
-					<th data-field="data">Data da Compra</th>
-					<th data-field="valor">Valor da Compra</th>
-				</tr>
-			</thead>
-			<%
-				List<Compra> compras = compraDao.buscaCompras(cliente.getCodigoCliente());
-			%>
-			<%
-				for (Compra compra : compras) {
-			%>
-			<tbody>
-				<tr>
-					<td><%=compra.getDataCompra()%></td>
-					<td><%=calculo.calcular(compra.getCodigoCompra())%>
-					<td><li><a href="compra">Detalhes</a></li></td>
-				</tr>
-			</tbody>
-			<%
-				}
-			%>
-		</table>
-		<%
-			}
-		%>
+		
+		<jsp:useBean id="clienteDao" class="br.com.jsmartmarket.jpa.dao.ClienteDao"/>	
+		<jsp:useBean id="compraDao" class="br.com.jsmartmarket.jpa.dao.CompraDao"/>
+		<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente"/>
+		<jsp:useBean id="calculo" class="br.com.jsmartmarket.jpa.controller.CalcularCompra"/>		
+		<%if(session.getAttribute("usuarioLogado") != null){ %>
+		
+			<%String login = ""+session.getAttribute("login");%>
+			<%cliente = clienteDao.buscaLogin(login);%>
+					
+			<table>
+				<thead>
+					<tr>
+						<th data-field="data">Data da Compra</th>
+						<th data-field="valor">Valor da Compra</th>
+					</tr>
+				</thead>
+				<%List<Compra> compras = compraDao.buscaCompras(cliente.getCodigoCliente()); %>				
+				<%for(Compra compra: compras){ %>
+				<tbody>
+					<tr>
+						<td><%=compra.getDataCompra() %></td>
+						<td><%=calculo.calcular(compra.getCodigoCompra()) %>
+						<td><li><a href="compra">Detalhes</a></li></td>
+					</tr>
+				</tbody>
+				<%}%>
+			</table>
+		<%}%>
 	</div>
 	</div>
 
