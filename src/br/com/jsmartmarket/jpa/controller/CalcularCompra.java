@@ -20,7 +20,6 @@ public class CalcularCompra {
 		List<ItensCompra> buscaItens = new ItensCompraDao().buscaItens(codigoCompra);
 		for(ItensCompra iten: buscaItens){
 			Produto produto = new ProdutoDao().buscaProduto(iten.getCodigoProduto());
-			System.out.println(produto.getDescricao());
 			quantidade = iten.getQuantidade();
 			valorTotal = valorTotal + (quantidade * produto.getValorUnitario());
 		}
