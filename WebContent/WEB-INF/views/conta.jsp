@@ -64,10 +64,6 @@
 	<div class="col s12">
 
 		<%
-			if (session.getAttribute("usuarioLogado") != null) {
-		%>
-
-		<%
 			String login = "" + session.getAttribute("login");
 		%>
 		<%
@@ -83,8 +79,7 @@
 				</div>
 				<div class="col s2 right">
 					<ul id="nav‐mobile" class="right hide‐on‐med‐and‐down">
-						<a class="waves‐effect waves‐light btn"><i
-						class="material‐icons right">search</i>Procurar</a>
+						<a class="waves‐effect waves‐light btn"></i>Alterar</a>
 					</ul>
 				</div>
 			</div>
@@ -107,16 +102,14 @@
 				<tr>
 					<td><%=compra.getDataCompra()%></td>
 					<td><%=calculo.calcular(compra.getCodigoCompra())%>
-					<td><li><a href="compra">Detalhes</a></li></td>
+					<td><li><a href="compra?codigo=<%=compra.getCodigoCompra() %>">Detalhes</a></li></td>
 				</tr>
 			</tbody>
 			<%
 				}
 			%>
 		</table>
-		<%
-			}
-		%>
+		
 	</div>
 	</div>
 
