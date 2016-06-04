@@ -79,7 +79,7 @@
 				</div>
 				<div class="col s2 right">
 					<ul id="nav‐mobile" class="right hide‐on‐med‐and‐down">
-						<a class="waves‐effect waves‐light btn"></i>Alterar</a>
+						<a class="waves‐effect waves‐light btn"></i>Cadastro</a>
 					</ul>
 				</div>
 			</div>

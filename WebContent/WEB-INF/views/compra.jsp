@@ -4,7 +4,10 @@
 <%@ page
 	import="java.util.*,
 	br.com.jsmartmarket.jpa.model.Compra,
-	br.com.jsmartmarket.jpa.model.ItensCompra"%>
+	br.com.jsmartmarket.jpa.model.ItensCompra,
+	br.com.jsmartmarket.jpa.dao.ItensCompraDao,
+	br.com.jsmartmarket.jpa.dao.ProdutoDao,
+	br.com.jsmartmarket.jpa.model.Produto"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -58,20 +61,23 @@
 			class="br.com.jsmartmarket.jpa.dao.ClienteDao" />
 		<jsp:useBean id="compraDao"
 			class="br.com.jsmartmarket.jpa.dao.CompraDao" />
-		<jsp:useBean id="produtoDao"
-			class="br.com.jsmartmarket.jpa.dao.ProdutoDao" />
-		<jsp:useBean id="produto"
-			class="br.com.jsmartmarket.jpa.model.Produto" />
 		<jsp:useBean id="cliente"
 			class="br.com.jsmartmarket.jpa.model.Cliente" />
+		<jsp:useBean id="compra"
+			class="br.com.jsmartmarket.jpa.model.Compra" />
+		<jsp:useBean id="pagamento"
+			class="br.com.jsmartmarket.jpa.model.Pagamento" />
+		<jsp:useBean id="pagamentoDao"
+			class="br.com.jsmartmarket.jpa.dao.PagamentoDao" />
 		<jsp:useBean id="calculo"
 			class="br.com.jsmartmarket.jpa.controller.CalcularCompra" />
 
 		<%
 			String login = "" + session.getAttribute("login");
-		%>
-		<%
+			String codigoCompra = "" + session.getAttribute("codigoCompra");
 			cliente = clienteDao.buscaLogin(login);
+			compra = compraDao.buscaSuaCompra(Integer.parseInt(codigoCompra));
+			pagamento = pagamentoDao.buscaPagamento(compra.getCodigoPagamento());
 		%>
 
 		<div class="row">
@@ -81,27 +87,57 @@
 						<%="Bem vindo " + cliente.getNome() + " " + cliente.getSobrenome()%>
 					</h4>
 				</div>
+				<div class="col s2 right">
+					<ul id="nav‐mobile" class="right hide‐on‐med‐and‐down">
+						<a class="waves‐effect waves‐light btn" href="conta"></i>Voltar</a>
+					</ul>
+				</div>
 			</div>
 		</div>
 
+		<div class="row">
+			<div lass="row">
+				<div class="col s5">
+					<h5 class="black-text text-indigo">
+						<%="Forma de Pagamento: "+pagamento.getDescricao()%>
+					</h5>
+				</div>
+				<div class="col s4">
+					<h5 class="black-text text-indigo">
+						<%="Data da Compra: "+compra.getDataCompra()%>
+					</h5>
+				</div>
+				<div class="col s3">
+					<h5 class="black-text text-indigo">
+						<%="Valor da Compra: "+calculo.calcular(compra.getCodigoCompra())%>
+					</h5>
+				</div>
+			</div>
+		</div>
 		<table>
 			<thead>
 				<tr>
-					<th data-field="data">Data da Compra</th>
-					<th data-field="valor">Valor da Compra</th>
+					<th data-field="descricao">Descrição</th>
+					<th data-field="unidade">Unidade</th>
+					<th data-field="quantidade">Quantidade</th>
+					<th data-field="valorUnitario">Valor Unitário</th>
+					<th data-field="total">Valor Total</th>
 				</tr>
 			</thead>
 			<%
-				List<Compra> compras = compraDao.buscaCompras(cliente.getCodigoCliente());
+				List<ItensCompra> listaItens = new ItensCompraDao().buscaItens(compra.getCodigoCompra());
 			%>
 			<%
-				for (Compra compra : compras) {
+				for (ItensCompra iten: listaItens) {
+					Produto produto = new ProdutoDao().buscaProduto(iten.getCodigoProduto());
 			%>
 			<tbody>
 				<tr>
-					<td><%=compra.getDataCompra()%></td>
-					<td><%=calculo.calcular(compra.getCodigoCompra())%>
-					<td><li><a href="compra">Detalhes</a></li></td>
+					<td><%=produto.getDescricao() %></td>
+					<td><%=produto.getUnidade() %></td>
+					<td><%=iten.getQuantidade() %></td>
+					<td><%="R$ "+produto.getValorUnitario() %></td>
+					<td><%="R$ "+(produto.getValorUnitario()*iten.getQuantidade()) %>
 				</tr>
 			</tbody>
 			<%

@@ -87,7 +87,8 @@ public class JsmartController {
 	@RequestMapping("/compra")
 	public String detalhaCompra(int codigo, HttpSession session){
 		if(session.getAttribute("usuarioLogado") != null){
-			return "compra?codigo="+codigo;
+			session.setAttribute("codigoCompra", ""+codigo);
+			return "compra";
 		}
 		return "redirect:index.html";
 	}
