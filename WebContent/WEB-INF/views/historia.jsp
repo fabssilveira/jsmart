@@ -30,7 +30,7 @@
 	<nav>
 		<div class="nav-wrapper indigo">
 			<a href="#" class="brand-logo center green-text text-accent-3">Um
-				pouco sobre o JSmart Market</a>
+				pouco sobre o JSmartMarket</a>
 
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
 				<li><a href="paginaInicial">Página Inicial</a></li>
@@ -49,7 +49,7 @@
 	<!-- cards -->
 
 	<div class="row center red-text text-lighten-2">
-		<h3>Protótipo do Carrinho inteligente JSmart Market</h3>
+		<h3>Protótipo do Carrinho inteligente JSmartMarket</h3>
 	</div>
 
 	<div class="carousel">
@@ -82,16 +82,16 @@
 		<div class="col s6 left">
 			<div class="card-panel red lighten-2">
 				<span class="white-text"><h5>O sistema de anti-fraude do
-						JSmart Market, requer a sincronização dos sensores de movimento
-						juntamente com a placa Raspberry, que identifica qualquer
-						produto que é colocado dentro do carrinho.</h5></span>
+						JSmartMarket, requer a sincronização dos sensores de movimento
+						juntamente com a placa Raspberry. A Placa identifica qualquer
+						produto que é colocado dentro do carrinho JSmartMarket.</h5></span>
 			</div>
 		</div>
 
 	</div>
 
 	<div class="row blue-text col s6 center">
-		<h5>Vídeo Demonstrativo</h5>
+		<h5>Video Demonstrativo</h5>
 	</div>
 </body>
 

@@ -1,4 +1,4 @@
-//Inicializa componentes do materializzecss
+﻿//Inicializa componentes do materializzecss
 $(document).ready(function() {
 	$('input#input_text, textarea#textarea1').characterCounter();
 });
@@ -39,3 +39,5 @@ $(document).ready(function(){
       $('.carousel').carousel();
     });
 	
+
+

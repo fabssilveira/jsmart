@@ -19,6 +19,7 @@ version="2.0">
 			value="jdbc:mysql://rdsmysql.c8u1ssymbr2u.us-west-2.rds.amazonaws.com/jsmart" />
 		<property name="javax.persistence.jdbc.user" value="jsmart" />
 		<property name="javax.persistence.jdbc.password" value="grupofatec" />
+		<property name="hibernate.cache.use_second_level_cache" value="true" />
 		<property name="hibernate.dialect"
 			value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 		<property name="hibernate.show_sql" value="false" />

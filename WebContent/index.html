@@ -23,56 +23,65 @@
 <body>
 
 	<nav>
-		<div class="nav-wrapper indigo ">
-			<form class="col s4" action="login" method="post">
-				<div class="row col s4">
-					<div class="input-image col s4	 ">
+		<div class="nav-wrapper indigo">
+			<form class="" action="login" method="post">
+				<div class="row">
+					<div class="col s12">
+						<div class="input-image col s4	 ">
 
-						<img class="image col s3 " src="assets/media/img/img.logo.png"><b><h4>JSmartMarket</h4></b>
-					</div>
+							<img class="image col s3 " src="assets/media/img/img.logo.png"><b><h4>JSmartMarket</h4></b>
+						</div>
 
-					<div class="input-field col s3 red">
-						<i class="material-icons blue-text prefix">account_circle</i> <input
-							id="icon_prefix" name="userLogin" type="text" class="validate white-text">
-						<label for="icon_prefix "><b>Login</b></label>
-					</div>
-					<div class="input-field col s3	 red">
-						<i class="material-icons blue-text prefix">vpn_key</i> <input
-							id="icon_telephone" name="senha" type="password" class="validate white-text">
-						<label for="icon_telephone"><b>Senha</b></label>
-					</div>
-					<div class="col s2">
-						<button class="btn blue darken-4" type="submit" name="action">
-							Entrar</button>
+						<!-- Modal Trigger -->
+
+						<a class="waves-effect red btn modal-trigger right" href="#modal1">Login
+							/ Cadastro</a>
+
+						<!-- Modal Structure -->
+						<div id="modal1" class="modal">
+							<div class="modal-content center">
+
+								<h4>Acesso</h4>
+
+								<div class="row "></div>
+
+								<div class="row black">
+									<div class="input-field col s11">
+										<i class="material-icons prefix indigo-text">account_circle</i>
+										<input id="icon_prefix" type="text" name="userLogin" class="validate">
+										<label for="icon_prefix"></label>
+									</div>
+								</div>
+
+								<div class="row black">
+									<div class="input-field col s11 ">
+										<i class="material-icons prefix indigo-text">vpn_key</i> <input
+											id="icon_prefix" type="password" name="senha" class="validate"> <label
+											for="icon_prefix"></label>
+									</div>
+								</div>
+
+								<div class="modal-footer indigo">
+									<button type="submit" name="action"
+										class=" modal-action modal-close indigo white-text btn-flat">Entrar</button>
+									<a href="formulario"
+										class=" modal-action modal-close indigo red-text btn-flat left"><b>Cadastrar</b></a>
+								</div>
+								
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
 		</div>
 	</nav>
 
-	<!--linha da ofertas/cadastro-->
-
-	<div class="row">
-		<div class="col s4 blue-text"></div>
-		<div class="col s4 blue-text center ">
-			<h3>
-				<b>Ofertas</b>
-			</h3>
-		</div>
-		</ul>
-		<form action="formulario" method="post">
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<a class="waves-effect red-text white btn center-right"
-				href="formulario">
-				<i class="material-icons right">mode_edit</i>Cadastre-se</a>
-			</ul>
-		</form>
-	</div>
-
 	<!-- Conteudo do Site -->
 	<div id="content">
 		<!-- Cabecalho conteudo -->
-
+		<div class="row center blue-text">
+			<h3>Ofertas</h3>
+		</div>
 		<div class="row">
 			<div class="col s3">
 				<div class="card">

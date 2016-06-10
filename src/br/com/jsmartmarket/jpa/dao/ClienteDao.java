@@ -17,7 +17,7 @@ public class ClienteDao extends DaoGenerico<Long, Cliente>{
 		Query qr = em.createQuery("select c from Cliente as c "+
           "where c.userLogin = :userLogin");
 		qr.setParameter("userLogin", userLogin);
-		
+				
 		try{
 			return (Cliente) qr.getSingleResult();
 		}catch(NoResultException e){
