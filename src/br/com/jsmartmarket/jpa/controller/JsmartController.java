@@ -103,8 +103,8 @@ public class JsmartController {
 		return "redirect:index.html";
 	}
 	
-	@RequestMapping("/logoff")
-	public String logoff(HttpSession session){
+	@RequestMapping("/logout")
+	public String logout(HttpSession session){
 		if(session.getAttribute("usuarioLogado") != null){
 			session.invalidate();
 		}
