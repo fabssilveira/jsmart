@@ -34,7 +34,7 @@
 	</ul>
 	<ul id="nav-mobile" class="left hide-on-med-and-down">
 		<a class="waves-effect red-text white btn-large center-right"
-			href="meusDados"><i class="material-icons right red-text">fast_rewind</i>Voltar</a>
+			href="conta"><i class="material-icons right red-text">fast_rewind</i>Voltar</a>
 	</ul>
 	<div class="nav-wrapper ">
 
@@ -60,7 +60,7 @@
 			<!-- Nome e Sobre Nome -->
 			<div class=" row red-text text-lighten-2">
 				<i class="large material-icons left indigo-text">insert_chart</i>
-				<h3>Meus Dados - Alterar</h3>
+				<h3>Meus Dados - Alterar Endereço e Contato</h3>
 			</div>
 
 
