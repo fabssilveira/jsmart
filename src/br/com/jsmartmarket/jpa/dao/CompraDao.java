@@ -16,7 +16,9 @@ public class CompraDao extends DaoGenerico<Long, Compra>{
           "where c.codigoCliente = :codigoCliente");
 		qr.setParameter("codigoCliente", codigoCliente);
 		
-		return qr.getResultList();
+		List<Compra> retorno =  qr.getResultList();
+		em.clear();
+		return retorno;
 	}
 	
 	public Compra buscaSuaCompra(int codigoCompra){
@@ -26,7 +28,9 @@ public class CompraDao extends DaoGenerico<Long, Compra>{
 		qr.setParameter("codigoCompra", codigoCompra);
 		
 		try{
-			return (Compra) qr.getSingleResult();
+			Compra retorno = (Compra) qr.getSingleResult();
+			em.clear();
+			return retorno;
 		}catch(NoResultException e){
 			return null;
 		}

@@ -15,7 +15,9 @@ public class ItensCompraDao extends DaoGenerico<Long, ItensCompra>{
           "where i.codigoCompra = :codigoCompra");
 		qr.setParameter("codigoCompra", codigoCompra);
 		
-		return qr.getResultList();
+		List<ItensCompra> retorno = qr.getResultList();
+		em.clear();
+		return retorno;
 	}
 	
 }

@@ -14,7 +14,9 @@ public class ProdutoDao extends DaoGenerico<Long, Produto>{
 		qr.setParameter("codigoProduto", codigoProduto);
 		
 		try{
-			return (Produto) qr.getSingleResult();
+			Produto retorno = (Produto) qr.getSingleResult();
+			em.clear();
+			return retorno;
 		}catch(NoResultException e){
 			return null;
 		}

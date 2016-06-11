@@ -1,7 +1,5 @@
 package br.com.jsmartmarket.jpa.dao;
 
-import java.util.List;
-
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
@@ -17,7 +15,9 @@ public class PagamentoDao extends DaoGenerico<Long, Pagamento>{
 		qr.setParameter("codigoPagamento", codigoPagamento);
 		
 		try{
-			return (Pagamento) qr.getSingleResult();
+			Pagamento retorno = (Pagamento) qr.getSingleResult();
+			em.clear();
+			return retorno;
 		}catch(NoResultException e){
 			return null;
 		}
