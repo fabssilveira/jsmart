@@ -23,7 +23,7 @@ public class CalcularCompra {
 			quantidade = iten.getQuantidade();
 			valorTotal = valorTotal + (quantidade * produto.getValorUnitario());
 		}
-		return "R$ "+valorTotal;
+		return String.format("%.2f",valorTotal);
 	}
 
 }

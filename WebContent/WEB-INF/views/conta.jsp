@@ -101,7 +101,7 @@
 			<tbody>
 				<tr>
 					<td><%=compra.getDataCompra()%></td>
-					<td><%=calculo.calcular(compra.getCodigoCompra())%>
+					<td><%="R$ "+calculo.calcular(compra.getCodigoCompra())%>
 					<td><li><a href="compra?codigo=<%=compra.getCodigoCompra() %>">Detalhes</a></li></td>
 				</tr>
 			</tbody>

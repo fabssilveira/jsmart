@@ -109,7 +109,7 @@
 				</div>
 				<div class="col s3">
 					<h5 class="black-text text-indigo">
-						<%="Valor da Compra: "+calculo.calcular(compra.getCodigoCompra())%>
+						<%="Valor da Compra: R$ "+calculo.calcular(compra.getCodigoCompra())%>
 					</h5>
 				</div>
 			</div>
@@ -136,8 +136,10 @@
 					<td><%=produto.getDescricao() %></td>
 					<td><%=produto.getUnidade() %></td>
 					<td><%=iten.getQuantidade() %></td>
-					<td><%="R$ "+produto.getValorUnitario() %></td>
-					<td><%="R$ "+(produto.getValorUnitario()*iten.getQuantidade()) %>
+					<%String valorUnitario = String.format("%.2f",produto.getValorUnitario()); %>
+					<%String valor = String.format("%.2f",(produto.getValorUnitario()*iten.getQuantidade()));%>
+					<td><%="R$ "+valorUnitario%></td>
+					<td><%="R$ "+valor%></td>
 				</tr>
 			</tbody>
 			<%
