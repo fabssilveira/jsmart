@@ -55,7 +55,6 @@
 	%>
 
 	<div class="container">
-
 		<form class="col s12" action="alteraCliente" method="Post">
 
 			<!-- Nome e Sobre Nome -->
@@ -254,12 +253,10 @@
 							</h6></label>
 					</div>
 				</div>
-				<a class="waves-effect orange btn modal-trigger" href="#modal1"><i
-					class="material-icons right"></i>Alterar
-					Dados</a>
+				<a class="waves-effect orange btn modal-trigger" href="#modal2"><i
+					class="material-icons right"></i>Alterar Dados</a>
 
-				<!-- Modal Structure -->
-				<div id="modal1" class="modal">
+				<div id="modal2" class="modal">
 					<div class="modal-content center">
 
 						<h4>Confirmação de Login</h4>
@@ -289,11 +286,11 @@
 
 					</div>
 				</div>
+
 			</div>
 		</form>
 	</div>
-
-
+	
 	<!-- Rodape -->
 	<footer class="page-footer  indigo">
 	<div class="footer-copyright">
