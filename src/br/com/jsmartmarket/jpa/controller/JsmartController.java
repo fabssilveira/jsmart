@@ -31,6 +31,11 @@ public class JsmartController {
 		new ClienteDao().salvar(cliente);
 		return "redirect:index.html";
 	}
+	
+	@RequestMapping("/alteraCliente")
+	public String alteraCliente(Cliente cliente){
+		return "meusDados";
+	}
 
 	@RequestMapping("/login")
 	public String paginaInicial(Cliente cliente, HttpSession session){
@@ -89,6 +94,22 @@ public class JsmartController {
 		if(session.getAttribute("usuarioLogado") != null){
 			session.setAttribute("codigoCompra", ""+codigo);
 			return "compra";
+		}
+		return "redirect:index.html";
+	}
+	
+	@RequestMapping("/meusDados")
+	public String meusDados(HttpSession session){
+		if(session.getAttribute("usuarioLogado") != null){
+			return "meusDados";
+		}
+		return "redirect:index.html";
+	}
+	
+	@RequestMapping("/alteracaoDados")
+	public String alterarDados(Cliente cliente, HttpSession session){
+		if(session.getAttribute("usuarioLogado") != null){
+			return "alteracaoDados";
 		}
 		return "redirect:index.html";
 	}
