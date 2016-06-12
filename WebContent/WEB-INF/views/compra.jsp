@@ -46,8 +46,8 @@
 		</ul>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<a class="waves-effect waves-light red-text orange btn-large center"
-				href="logoff" id="logoff"><i
-				class="material-icons right red-text">power_settings_new</i>Logoff</a>
+				href="logout" id="logout"><i
+				class="material-icons right red-text">power_settings_new</i>Logout</a>
 		</ul>
 	</div>
 
