@@ -263,7 +263,7 @@
 
 						<div class="row "></div>
 
-						<div class="row black">
+						<div class="row black white-text">
 							<div class="input-field col s11">
 								<i class="material-icons prefix indigo-text">account_circle</i>
 								<input id="icon_prefix" type="text" name="userLogin"
@@ -271,7 +271,7 @@
 							</div>
 						</div>
 
-						<div class="row black">
+						<div class="row black white-text">
 							<div class="input-field col s11 ">
 								<i class="material-icons prefix indigo-text">vpn_key</i> <input
 									id="icon_prefix" type="password" name="senha" class="validate">
