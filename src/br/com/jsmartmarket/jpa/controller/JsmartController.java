@@ -4,7 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -12,22 +11,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.jsmartmarket.jpa.dao.ClienteDao;
 import br.com.jsmartmarket.jpa.model.Cliente;
-import br.com.jsmartmarket.jpa.util.JPAUtil;
 
 @Controller
 public class JsmartController {
 
 	@RequestMapping("/gravaCliente")
-	public String gravaCliente(Cliente cliente){
+	public String gravaCliente(Cliente cliente, String confirmaSenha){
 		
-		if(cliente.getNome().equals("") && cliente.getCpf().equals("")
-				&& cliente.getUserLogin().equals("") && cliente.getSenha().equals("")
-				&& cliente.getEmail().equals("") && cliente.getTelefone().equals("")){
+		if(cliente.getNome().equals("") || cliente.getCpf().equals("")
+				|| cliente.getUserLogin().equals("") || cliente.getSenha().equals("")
+				|| cliente.getEmail().equals("") || cliente.getTelefone().equals("")){
 			return "formulario3";
 		}
 		
-		String senha = gerarSenha(cliente.getSenha());
-		cliente.setSenha(senha);
+		if(cliente.getSenha().equals(confirmaSenha)){
+			String senha = gerarSenha(cliente.getSenha());
+			cliente.setSenha(senha);
+		}else{
+			return "formulario4";
+		}
+		
 		Cliente cadastro = new Cliente();
 		
 		cadastro = new ClienteDao().buscaCpf(cliente.getCpf());
