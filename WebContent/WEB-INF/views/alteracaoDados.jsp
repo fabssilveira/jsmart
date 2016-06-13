@@ -199,7 +199,7 @@
 				<div class="col s2">
 					<div class="input-field">
 						<select name="uf">
-							<option value="<%=cliente.getUf() %>">Selecione aqui</option>
+							<option value="<%=cliente.getUf() %>"><%=cliente.getUf() %></option>
 							<option value="SP">SP</option>
 							<option value="MG">MG</option>
 							<option value="RJ">RJ</option>
@@ -258,7 +258,7 @@
 					</div>
 				</div>
 				<a class="waves-effect orange btn modal-trigger" href="#modal2"><i
-					class="material-icons right"></i>Alterar Dados</a>
+					class="material-icons right"></i>Gravar Alteração</a>
 
 				<div id="modal2" class="modal">
 					<div class="modal-content center">

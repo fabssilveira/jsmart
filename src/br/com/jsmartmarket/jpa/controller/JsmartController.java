@@ -47,8 +47,10 @@ public class JsmartController {
 	public String alteraCliente(Cliente cliente, HttpSession session){
 		String senha = gerarSenha(cliente.getSenha());
 		Cliente autorizado = new ClienteDao().buscaLogin(cliente.getUserLogin());
-		if(senha.equals(autorizado.getSenha()) 
-				&& cliente.getUserLogin().equals(session.getAttribute("login"))){
+		if(autorizado == null){
+			return "alteracaoDados";
+		}
+		if(senha.equals(autorizado.getSenha()) && autorizado.getUserLogin().equals(session.getAttribute("login"))){ 
 			cliente.setCodigoCliente(autorizado.getCodigoCliente());
 			cliente.setNome(autorizado.getNome());
 			cliente.setSobrenome(autorizado.getSobrenome());
@@ -58,8 +60,9 @@ public class JsmartController {
 			cliente.setDataNascimento(autorizado.getDataNascimento());
 			cliente.setSenha(autorizado.getSenha());
 			new ClienteDao().atualizar(cliente);
+			return "meusDados";
 		}
-		return "meusDados";
+		return "alteracaoDados";
 	}
 
 	@RequestMapping("/login")
