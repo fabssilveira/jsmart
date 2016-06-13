@@ -155,7 +155,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-orange">
 							mode_edit</i> <input id="endereço" name="logradouro" type="text"
-							class="validate"> <label for="endereço"><h6>
+							class="validate" value="<%=cliente.getLogradouro() %>"> <label for="endereço"><h6>
 								<b>Endereço</b>
 							</h6></label>
 					</div>
@@ -163,7 +163,8 @@
 
 				<div class="col s1">
 					<div class="input-field">
-						<input id="numero" name="numero" type="text" class="validate">
+						<input id="numero" name="numero" type="text" class="validate"
+						value="<%=cliente.getNumero() %>">
 						<label for="numero"><h6>
 								<b>Número</b>
 							</h6></label>
@@ -172,7 +173,8 @@
 
 				<div class="col s3">
 					<div class="input-field">
-						<input id="bairro" name="bairro" type="text" class="validate">
+						<input id="bairro" name="bairro" type="text" class="validate"
+						value="<%=cliente.getBairro() %>">
 						<label for="bairro"><h6>
 								<b>Bairro</b>
 							</h6></label>
@@ -188,7 +190,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-indigo">
 							location_on</i> <input id="cidade" name="cidade" type="text"
-							class="validate"> <label for="cidade"><h6>
+							class="validate" value="<%=cliente.getCidade() %>"> <label for="cidade"><h6>
 								<b>Cidade</b>
 							</h6></label>
 					</div>
@@ -197,7 +199,7 @@
 				<div class="col s2">
 					<div class="input-field">
 						<select name="uf">
-							<option value="" disabled selected>Selecione aqui</option>
+							<option value="<%=cliente.getUf() %>">Selecione aqui</option>
 							<option value="SP">SP</option>
 							<option value="MG">MG</option>
 							<option value="RJ">RJ</option>
@@ -210,7 +212,7 @@
 				<div class="col s2">
 					<div class="input-field">
 						<input id="CEP" name="cep" type="text" length="10"
-							class="validate"> <label for="numero"><h6>
+							class="validate" value="<%=cliente.getCep() %>"> <label for="numero"><h6>
 								<b>CEP</b>
 							</h6></label>
 					</div>
@@ -225,7 +227,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-indigo">phone</i>
 						<input id="residencial" name="telefone" type="tel"
-							class="validate"> <label for="residencial"><h6>
+							class="validate" value="<%=cliente.getTelefone() %>"> <label for="residencial"><h6>
 								<b>Telefone Residencial</b>
 								<h6></label>
 					</div>
@@ -234,7 +236,8 @@
 				<div class="col s4">
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-indigo">stay_primary_portrait</i>
-						<input id="celular" name="celular" type="tel" class="validate">
+						<input id="celular" name="celular" type="tel" class="validate"
+						value="<%=cliente.getCelular() %>">
 						<label for="celular"><h6>
 								<b>Telefone Celular</b>
 								<h6></label>
@@ -247,7 +250,8 @@
 				<div class="col s5">
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-indigo">email</i>
-						<input id="email" name="email" type="email" class="validate">
+						<input id="email" name="email" type="email" class="validate"
+						value="<%=cliente.getEmail() %>">
 						<label for="email" data-error="wrong" data-success="right"><h6>
 								<b>E-mail</b>
 							</h6></label>
