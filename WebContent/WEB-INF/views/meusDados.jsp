@@ -98,7 +98,7 @@
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">
 						done_all</i> <input disabled value="<%=cliente.getRg()%>" id="rg"
-						name="rg" type="text" length="20" class="validate black-text">
+						name="rg" type="text" class="validate black-text">
 					<label for="rg"><h6>
 							<b>RG</b>
 						</h6></label>
@@ -108,7 +108,7 @@
 			<div class="col s2">
 				<div class="input-field">
 					<input disabled value="<%=cliente.getExpedidor()%>" id="orgao"
-						name="expedidor" type="text" length="5"
+						name="expedidor" type="text" 
 						class="validate black-text"> <label for="orgao"><h6>
 							<b>Org. Expedidor</b>
 						</h6></label>
@@ -118,7 +118,7 @@
 			<div class="col s3">
 				<div class="input-field">
 					<input disabled value="<%=cliente.getCpf()%>" id="cpf" name="cpf"
-						type="text" length="14" class="validate black-text"> <label
+						type="text" class="validate black-text"> <label
 						for="cpf"><h6>
 							<b>CPF</b>
 						</h6></label>
@@ -207,7 +207,7 @@
 			<div class="col s2">
 				<div class="input-field">
 					<input disabled value="<%=cliente.getCep()%>" id="CEP" name="cep"
-						type="text" length="10" class="validate black-text"> <label
+						type="text" class="validate black-text"> <label
 						for="numero"><h6>
 							<b>CEP</b>
 						</h6></label>
