@@ -1,25 +1,29 @@
 package br.com.jsmartmarket.jpa.dao;
 
+import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import br.com.jsmartmarket.jpa.model.Cliente;
 
-public class ClienteDao extends DaoGenerico<Long, Cliente>{
-
-	@Override
-	public Cliente buscaPorId(Cliente cliente, long codigoCliente) {
-		return super.buscaPorId(cliente, codigoCliente);
+public class ClienteDao {
+	
+	EntityManager em;
+	
+	public ClienteDao(EntityManager em){
+		this.em = em;
 	}
 
-	@Override
 	public void atualizar(Cliente cliente) {
-		super.atualizar(cliente);
+		em.getTransaction().begin();
+		em.merge(cliente);
+		em.getTransaction().commit();
 	}
-
-	@Override
+	
 	public void salvar(Cliente cliente){
-		super.salvar(cliente);				
+		em.getTransaction().begin();
+		em.persist(cliente);
+		em.getTransaction().commit();			
 	}
 	
 	public Cliente buscaLogin(String userLogin){
@@ -30,7 +34,6 @@ public class ClienteDao extends DaoGenerico<Long, Cliente>{
 		
 		try{
 			Cliente retorno = (Cliente) qr.getSingleResult();
-			em.clear();
 			return retorno;
 		}catch(NoResultException e){
 			return null;
@@ -45,7 +48,6 @@ public class ClienteDao extends DaoGenerico<Long, Cliente>{
 				
 		try{
 			Cliente retorno = (Cliente) qr.getSingleResult();
-			em.clear();
 			return retorno;
 		}catch(NoResultException e){
 			return null;

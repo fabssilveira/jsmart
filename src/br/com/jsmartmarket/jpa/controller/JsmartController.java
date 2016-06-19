@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -11,16 +12,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.jsmartmarket.jpa.dao.ClienteDao;
 import br.com.jsmartmarket.jpa.model.Cliente;
+import br.com.jsmartmarket.jpa.util.JPAUtil;
 
 @Controller
 public class JsmartController {
+	
+	EntityManager em;
 
 	@RequestMapping("/gravaCliente")
 	public String gravaCliente(Cliente cliente, String confirmaSenha){
 		
+		EntityManager emGrava = new JPAUtil().getEntityManager();
+		
 		if(cliente.getNome().equals("") || cliente.getCpf().equals("")
 				|| cliente.getUserLogin().equals("") || cliente.getSenha().equals("")
 				|| cliente.getEmail().equals("") || cliente.getTelefone().equals("")){
+			emGrava.close();
 			return "formulario3";
 		}
 		
@@ -28,28 +35,32 @@ public class JsmartController {
 			String senha = gerarSenha(cliente.getSenha());
 			cliente.setSenha(senha);
 		}else{
+			emGrava.close();
 			return "formulario4";
 		}
 		
 		Cliente cadastro = new Cliente();
 		
-		cadastro = new ClienteDao().buscaCpf(cliente.getCpf());
+		cadastro = new ClienteDao(emGrava).buscaCpf(cliente.getCpf());
 		if(cadastro != null){
+			emGrava.close();
 			return "formulario2";
 		}
-		cadastro = new ClienteDao().buscaLogin(cliente.getUserLogin());
+		cadastro = new ClienteDao(emGrava).buscaLogin(cliente.getUserLogin());
 		if(cadastro != null){
+			emGrava.close();
 			return "formulario2";
 		}
 		
-		new ClienteDao().salvar(cliente);
+		new ClienteDao(emGrava).salvar(cliente);
+		emGrava.close();
 		return "redirect:index.html";
 	}
 	
 	@RequestMapping("/alteraCliente")
 	public String alteraCliente(Cliente cliente, HttpSession session){
 		String senha = gerarSenha(cliente.getSenha());
-		Cliente autorizado = new ClienteDao().buscaLogin(cliente.getUserLogin());
+		Cliente autorizado = new ClienteDao(em).buscaLogin(cliente.getUserLogin());
 		if(autorizado == null){
 			return "alteracaoDados";
 		}
@@ -62,7 +73,7 @@ public class JsmartController {
 			cliente.setCpf(autorizado.getCpf());
 			cliente.setDataNascimento(autorizado.getDataNascimento());
 			cliente.setSenha(autorizado.getSenha());
-			new ClienteDao().atualizar(cliente);
+			new ClienteDao(em).atualizar(cliente);
 			return "meusDados";
 		}
 		return "alteracaoDados";
@@ -71,9 +82,12 @@ public class JsmartController {
 	@RequestMapping("/login")
 	public String paginaInicial(Cliente cliente, HttpSession session){
 		
+		em = new JPAUtil().getEntityManager();
+		
 		String senha = gerarSenha(cliente.getSenha());
-		Cliente autorizado = new ClienteDao().buscaLogin(cliente.getUserLogin());
+		Cliente autorizado = new ClienteDao(em).buscaLogin(cliente.getUserLogin());
 		if(autorizado == null){
+			em.close();
 			return "formulario";
 		}
 		if(autorizado.getSenha().equals(senha)){
@@ -81,6 +95,7 @@ public class JsmartController {
 			session.setAttribute("login", autorizado.getUserLogin());
 			return "paginaInicial";
 		}
+		em.close();
 		return "redirect:index.html";
 	}
 	
@@ -118,7 +133,7 @@ public class JsmartController {
 		if(session.getAttribute("usuarioLogado") != null){
 			session.invalidate();
 		}
-		
+		em.close();
 		return "redirect:index.html";
 	}
 	

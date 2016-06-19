@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page
+	import="java.util.*,
+	br.com.jsmartmarket.jpa.dao.ClienteDao,
+	br.com.jsmartmarket.jpa.util.JPAUtil,
+	javax.persistence.EntityManager"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -26,8 +31,6 @@
 
 <body>
 
-	<jsp:useBean id="clienteDao"
-		class="br.com.jsmartmarket.jpa.dao.ClienteDao" />
 	<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente" />
 
 	<nav>
@@ -51,7 +54,9 @@
 		String login = "" + session.getAttribute("login");
 	%>
 	<%
-		cliente = clienteDao.buscaLogin(login);
+		EntityManager em = new JPAUtil().getEntityManager();
+		cliente = new ClienteDao(em).buscaLogin(login);
+		em.close();
 	%>
 
 	<div class="container">

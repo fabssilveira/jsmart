@@ -1,11 +1,18 @@
 package br.com.jsmartmarket.jpa.dao;
 
+import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import br.com.jsmartmarket.jpa.model.Pagamento;
 
-public class PagamentoDao extends DaoGenerico<Long, Pagamento>{
+public class PagamentoDao {
+	
+	EntityManager em;
+	
+	public PagamentoDao(EntityManager em){
+		this.em = em;
+	}
 	
 	@SuppressWarnings("unchecked")
 	public Pagamento buscaPagamento(int codigoPagamento){
@@ -16,7 +23,6 @@ public class PagamentoDao extends DaoGenerico<Long, Pagamento>{
 		
 		try{
 			Pagamento retorno = (Pagamento) qr.getSingleResult();
-			em.clear();
 			return retorno;
 		}catch(NoResultException e){
 			return null;

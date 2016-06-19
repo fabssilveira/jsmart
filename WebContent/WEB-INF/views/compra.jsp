@@ -7,7 +7,12 @@
 	br.com.jsmartmarket.jpa.model.ItensCompra,
 	br.com.jsmartmarket.jpa.dao.ItensCompraDao,
 	br.com.jsmartmarket.jpa.dao.ProdutoDao,
-	br.com.jsmartmarket.jpa.model.Produto"%>
+	br.com.jsmartmarket.jpa.dao.ClienteDao,
+	br.com.jsmartmarket.jpa.dao.CompraDao,
+	br.com.jsmartmarket.jpa.dao.PagamentoDao,
+	br.com.jsmartmarket.jpa.model.Produto,
+	br.com.jsmartmarket.jpa.util.JPAUtil,
+	javax.persistence.EntityManager"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -57,27 +62,22 @@
 
 	<div class="col s12">
 
-		<jsp:useBean id="clienteDao"
-			class="br.com.jsmartmarket.jpa.dao.ClienteDao" />
-		<jsp:useBean id="compraDao"
-			class="br.com.jsmartmarket.jpa.dao.CompraDao" />
 		<jsp:useBean id="cliente"
 			class="br.com.jsmartmarket.jpa.model.Cliente" />
 		<jsp:useBean id="compra"
 			class="br.com.jsmartmarket.jpa.model.Compra" />
 		<jsp:useBean id="pagamento"
 			class="br.com.jsmartmarket.jpa.model.Pagamento" />
-		<jsp:useBean id="pagamentoDao"
-			class="br.com.jsmartmarket.jpa.dao.PagamentoDao" />
 		<jsp:useBean id="calculo"
 			class="br.com.jsmartmarket.jpa.controller.CalcularCompra" />
 
 		<%
+			EntityManager em = new JPAUtil().getEntityManager();
 			String login = "" + session.getAttribute("login");
 			String codigoCompra = "" + session.getAttribute("codigoCompra");
-			cliente = clienteDao.buscaLogin(login);
-			compra = compraDao.buscaSuaCompra(Integer.parseInt(codigoCompra));
-			pagamento = pagamentoDao.buscaPagamento(compra.getCodigoPagamento());
+			cliente = new ClienteDao(em).buscaLogin(login);
+			compra = new CompraDao(em).buscaSuaCompra(Integer.parseInt(codigoCompra));
+			pagamento = new PagamentoDao(em).buscaPagamento(compra.getCodigoPagamento());
 		%>
 
 		<div class="row">
@@ -125,11 +125,11 @@
 				</tr>
 			</thead>
 			<%
-				List<ItensCompra> listaItens = new ItensCompraDao().buscaItens(compra.getCodigoCompra());
+				List<ItensCompra> listaItens = new ItensCompraDao(em).buscaItens(compra.getCodigoCompra());
 			%>
 			<%
 				for (ItensCompra iten: listaItens) {
-					Produto produto = new ProdutoDao().buscaProduto(iten.getCodigoProduto());
+					Produto produto = new ProdutoDao(em).buscaProduto(iten.getCodigoProduto());
 			%>
 			<tbody>
 				<tr>
@@ -144,6 +144,7 @@
 			</tbody>
 			<%
 				}
+				em.close();
 			%>
 		</table>
 

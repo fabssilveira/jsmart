@@ -4,7 +4,11 @@
 <%@ page
 	import="java.util.*,
 	br.com.jsmartmarket.jpa.model.Compra,
-	br.com.jsmartmarket.jpa.model.ItensCompra"%>
+	br.com.jsmartmarket.jpa.model.ItensCompra,
+	br.com.jsmartmarket.jpa.dao.ClienteDao,
+	br.com.jsmartmarket.jpa.dao.CompraDao,
+	br.com.jsmartmarket.jpa.util.JPAUtil,
+	javax.persistence.EntityManager"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -30,10 +34,6 @@
 
 <body>
 
-	<jsp:useBean id="clienteDao"
-		class="br.com.jsmartmarket.jpa.dao.ClienteDao" />
-	<jsp:useBean id="compraDao"
-		class="br.com.jsmartmarket.jpa.dao.CompraDao" />
 	<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente" />
 	<jsp:useBean id="calculo"
 		class="br.com.jsmartmarket.jpa.controller.CalcularCompra" />
@@ -67,7 +67,8 @@
 			String login = "" + session.getAttribute("login");
 		%>
 		<%
-			cliente = clienteDao.buscaLogin(login);
+			EntityManager em = new JPAUtil().getEntityManager();
+			cliente = new ClienteDao(em).buscaLogin(login);
 		%>
 
 		<div class="row">
@@ -93,7 +94,7 @@
 				</tr>
 			</thead>
 			<%
-				List<Compra> compras = compraDao.buscaCompras(cliente.getCodigoCliente());
+				List<Compra> compras = new CompraDao(em).buscaCompras(cliente.getCodigoCliente());
 			%>
 			<%
 				for (Compra compra : compras) {
@@ -107,6 +108,7 @@
 			</tbody>
 			<%
 				}
+				em.close();
 			%>
 		</table>
 		
