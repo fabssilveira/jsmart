@@ -24,5 +24,26 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
+	
+	<persistence-unit name="sqlserver">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.com.jsmartmarket.jpa.model.Cliente</class>
+		<class>br.com.jsmartmarket.jpa.model.Produto</class>
+		<class>br.com.jsmartmarket.jpa.model.Compra</class>
+		<class>br.com.jsmartmarket.jpa.model.Pagamento</class>
+		<class>br.com.jsmartmarket.jpa.model.ItensCompra</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:sqlserver://jsmartmarket.database.windows.net:1433;database=jsmartmarket" />
+			<property name="javax.persistence.jdbc.user" value="fabssilveira" />
+			<property name="javax.persistence.jdbc.password" value="Vt0408S6v6" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
 
 </persistence>
