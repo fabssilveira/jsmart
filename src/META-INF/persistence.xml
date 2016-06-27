@@ -15,8 +15,8 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://52.67.68.62/jsmart" />
-			<property name="javax.persistence.jdbc.user" value="fabssilveira" />
-			<property name="javax.persistence.jdbc.password" value="Vt0408S6v6" />
+			<property name="javax.persistence.jdbc.user" value="jsmart" />
+			<property name="javax.persistence.jdbc.password" value="grupofatec" />
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 			<property name="hibernate.show_sql" value="false" />

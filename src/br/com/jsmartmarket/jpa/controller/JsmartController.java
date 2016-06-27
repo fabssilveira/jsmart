@@ -18,16 +18,17 @@ import br.com.jsmartmarket.jpa.util.JPAUtil;
 public class JsmartController {
 	
 	EntityManager em;
+	
+	public JsmartController(){
+		em = new JPAUtil().getEntityManager();
+	}
 
 	@RequestMapping("/gravaCliente")
 	public String gravaCliente(Cliente cliente, String confirmaSenha){
 		
-		EntityManager emGrava = new JPAUtil().getEntityManager();
-		
 		if(cliente.getNome().equals("") || cliente.getCpf().equals("")
 				|| cliente.getUserLogin().equals("") || cliente.getSenha().equals("")
 				|| cliente.getEmail().equals("") || cliente.getTelefone().equals("")){
-			emGrava.close();
 			return "formulario3";
 		}
 		
@@ -35,25 +36,21 @@ public class JsmartController {
 			String senha = gerarSenha(cliente.getSenha());
 			cliente.setSenha(senha);
 		}else{
-			emGrava.close();
 			return "formulario4";
 		}
 		
 		Cliente cadastro = new Cliente();
 		
-		cadastro = new ClienteDao(emGrava).buscaCpf(cliente.getCpf());
+		cadastro = new ClienteDao(em).buscaCpf(cliente.getCpf());
 		if(cadastro != null){
-			emGrava.close();
 			return "formulario2";
 		}
-		cadastro = new ClienteDao(emGrava).buscaLogin(cliente.getUserLogin());
+		cadastro = new ClienteDao(em).buscaLogin(cliente.getUserLogin());
 		if(cadastro != null){
-			emGrava.close();
 			return "formulario2";
 		}
 		
-		new ClienteDao(emGrava).salvar(cliente);
-		emGrava.close();
+		new ClienteDao(em).salvar(cliente);
 		return "redirect:index.html";
 	}
 	
@@ -82,12 +79,9 @@ public class JsmartController {
 	@RequestMapping("/login")
 	public String paginaInicial(Cliente cliente, HttpSession session){
 		
-		em = new JPAUtil().getEntityManager();
-		
 		String senha = gerarSenha(cliente.getSenha());
 		Cliente autorizado = new ClienteDao(em).buscaLogin(cliente.getUserLogin());
 		if(autorizado == null){
-			em.close();
 			return "formulario";
 		}
 		if(autorizado.getSenha().equals(senha)){
@@ -95,7 +89,6 @@ public class JsmartController {
 			session.setAttribute("login", autorizado.getUserLogin());
 			return "paginaInicial";
 		}
-		em.close();
 		return "redirect:index.html";
 	}
 	
@@ -133,7 +126,6 @@ public class JsmartController {
 		if(session.getAttribute("usuarioLogado") != null){
 			session.invalidate();
 		}
-		em.close();
 		return "redirect:index.html";
 	}
 	
