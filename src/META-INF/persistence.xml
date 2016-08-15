@@ -14,7 +14,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://52.67.68.62/jsmart" />
+				value="jdbc:mysql://localhost/jsmart?autoReconnect=true" />
 			<property name="javax.persistence.jdbc.user" value="jsmart" />
 			<property name="javax.persistence.jdbc.password" value="grupofatec" />
 
