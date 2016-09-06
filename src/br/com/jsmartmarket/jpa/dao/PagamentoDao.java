@@ -2,17 +2,18 @@ package br.com.jsmartmarket.jpa.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
 
 import br.com.jsmartmarket.jpa.model.Pagamento;
 
+@Repository
 public class PagamentoDao {
 	
-	EntityManager em;
-	
-	public PagamentoDao(EntityManager em){
-		this.em = em;
-	}
+	@PersistenceContext
+	private EntityManager em;
 	
 	@SuppressWarnings("unchecked")
 	public Pagamento buscaPagamento(int codigoPagamento){

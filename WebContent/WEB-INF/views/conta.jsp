@@ -36,8 +36,7 @@
 <body>
 
 	<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente" />
-	<jsp:useBean id="calculo"
-		class="br.com.jsmartmarket.jpa.controller.CalcularCompra" />
+	<jsp:useBean id="calculo" class="br.com.jsmartmarket.jpa.controller.CalcularCompra" />
 
 	<!-- conteudo do site-->
 	<!--          adicionar depois <img class="logo" src="assets/media/img/img.logo.png"></img>         -->

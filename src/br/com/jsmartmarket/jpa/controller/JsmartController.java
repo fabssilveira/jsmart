@@ -4,25 +4,23 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.jsmartmarket.jpa.dao.ClienteDao;
 import br.com.jsmartmarket.jpa.model.Cliente;
-import br.com.jsmartmarket.jpa.util.JPAUtil;
 
+@Transactional
 @Controller
 public class JsmartController {
 	
-	EntityManager em;
+	@Autowired
+	ClienteDao clienteDao;
 	
-	public JsmartController(){
-		em = new JPAUtil().getEntityManager();
-	}
-
 	@RequestMapping("/gravaCliente")
 	public String gravaCliente(Cliente cliente, String confirmaSenha){
 		
@@ -41,23 +39,23 @@ public class JsmartController {
 		
 		Cliente cadastro = new Cliente();
 		
-		cadastro = new ClienteDao(em).buscaCpf(cliente.getCpf());
+		cadastro = clienteDao.buscaCpf(cliente.getCpf());
 		if(cadastro != null){
 			return "formulario2";
 		}
-		cadastro = new ClienteDao(em).buscaLogin(cliente.getUserLogin());
+		cadastro = clienteDao.buscaLogin(cliente.getUserLogin());
 		if(cadastro != null){
 			return "formulario2";
 		}
 		
-		new ClienteDao(em).salvar(cliente);
+		clienteDao.salvar(cliente);
 		return "redirect:index.html";
 	}
 	
 	@RequestMapping("/alteraCliente")
 	public String alteraCliente(Cliente cliente, HttpSession session){
 		String senha = gerarSenha(cliente.getSenha());
-		Cliente autorizado = new ClienteDao(em).buscaLogin(cliente.getUserLogin());
+		Cliente autorizado = clienteDao.buscaLogin(cliente.getUserLogin());
 		if(autorizado == null){
 			return "alteracaoDados";
 		}
@@ -70,7 +68,7 @@ public class JsmartController {
 			cliente.setCpf(autorizado.getCpf());
 			cliente.setDataNascimento(autorizado.getDataNascimento());
 			cliente.setSenha(autorizado.getSenha());
-			new ClienteDao(em).atualizar(cliente);
+			clienteDao.atualizar(cliente);
 			return "meusDados";
 		}
 		return "alteracaoDados";
@@ -80,7 +78,7 @@ public class JsmartController {
 	public String paginaInicial(Cliente cliente, HttpSession session){
 		
 		String senha = gerarSenha(cliente.getSenha());
-		Cliente autorizado = new ClienteDao(em).buscaLogin(cliente.getUserLogin());
+		Cliente autorizado = clienteDao.buscaLogin(cliente.getUserLogin());
 		if(autorizado == null){
 			return "formulario";
 		}

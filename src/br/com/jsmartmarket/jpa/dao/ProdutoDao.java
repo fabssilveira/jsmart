@@ -2,17 +2,18 @@ package br.com.jsmartmarket.jpa.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
 
 import br.com.jsmartmarket.jpa.model.Produto;
 
+@Repository
 public class ProdutoDao {
 
-	EntityManager em;
-	
-	public ProdutoDao(EntityManager em){
-		this.em = em;
-	}
+	@PersistenceContext
+	private EntityManager em;
 	
 	public Produto buscaProduto(int codigoProduto){
 		

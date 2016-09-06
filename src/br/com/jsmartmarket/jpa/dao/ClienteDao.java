@@ -2,28 +2,25 @@ package br.com.jsmartmarket.jpa.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
 
 import br.com.jsmartmarket.jpa.model.Cliente;
 
+@Repository
 public class ClienteDao {
 	
-	EntityManager em;
+	@PersistenceContext
+	private EntityManager em;
 	
-	public ClienteDao(EntityManager em){
-		this.em = em;
-	}
-
 	public void atualizar(Cliente cliente) {
-		em.getTransaction().begin();
 		em.merge(cliente);
-		em.getTransaction().commit();
 	}
 	
 	public void salvar(Cliente cliente){
-		em.getTransaction().begin();
 		em.persist(cliente);
-		em.getTransaction().commit();			
 	}
 	
 	public Cliente buscaLogin(String userLogin){
