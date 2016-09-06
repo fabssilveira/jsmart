@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 public class JPAUtil {
 	
 	private static EntityManagerFactory emFactory = Persistence
-			.createEntityManagerFactory("mysql");
+			.createEntityManagerFactory("sqlserver");
 
 	public EntityManager getEntityManager() {
 		EntityManager em = emFactory.createEntityManager();

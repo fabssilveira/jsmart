@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class ItensCompra {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int codigo;
+	private int codigoItensCompra;
 	private int codigoCompra;
 	private int codigoProduto;
 	private int quantidade;
@@ -32,11 +32,11 @@ public class ItensCompra {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	public int getCodigo() {
-		return codigo;
+	public int getCodigoItensCompra() {
+		return codigoItensCompra;
 	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigoItensCompra(int codigoItensCompra) {
+		this.codigoItensCompra = codigoItensCompra;
 	}
 	
 }
