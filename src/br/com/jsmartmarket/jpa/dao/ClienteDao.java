@@ -15,10 +15,6 @@ public class ClienteDao {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public void atualizar(Cliente cliente) {
-		em.merge(cliente);
-	}
-	
 	public void salvar(Cliente cliente){
 		em.persist(cliente);
 	}

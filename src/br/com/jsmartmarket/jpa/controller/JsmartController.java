@@ -176,7 +176,7 @@ public class JsmartController {
 			List<ItemDaCompra> itemDaCompra = new ArrayList<ItemDaCompra>();
 			for(ItensCompra item: itens){
 				ItemDaCompra aux = new ItemDaCompra();
-				Produto produto = produtoDao.buscaProduto(item.getCodigoProduto());
+				Produto produto = produtoDao.consulta(item.getCodigoProduto());
 				aux.setDescricao(produto.getDescricao());
 				aux.setUnidade(produto.getUnidade());
 				aux.setQuantidade(item.getQuantidade());
@@ -238,7 +238,7 @@ public class JsmartController {
 		
 		List<ItensCompra> buscaItens = itensCompraDao.buscaItens(codigoCompra);
 		for(ItensCompra iten: buscaItens){
-			Produto produto = produtoDao.buscaProduto(iten.getCodigoProduto());
+			Produto produto = produtoDao.consulta(iten.getCodigoProduto());
 			quantidade = iten.getQuantidade();
 			valorTotal = valorTotal + (quantidade * produto.getValorUnitario());
 		}
