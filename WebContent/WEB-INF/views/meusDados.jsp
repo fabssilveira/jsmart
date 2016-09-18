@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page
-	import="java.util.*,
-	br.com.jsmartmarket.jpa.dao.ClienteDao,
-	br.com.jsmartmarket.jpa.util.JPAUtil,
-	javax.persistence.EntityManager"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -32,8 +27,6 @@
 
 <body>
 
-	<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente" />
-
 	<nav>
 	</ul>
 	<ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -51,14 +44,7 @@
 
 	<div class="row col s12 indigo"></div>
 
-	<%
-		String login = "" + session.getAttribute("login");
-	%>
-	<%
-		EntityManager em = new JPAUtil().getEntityManager();
-		cliente = new ClienteDao(em).buscaLogin(login);
-		em.close();
-	%>
+	
 
 	<div class="container">
 
@@ -78,7 +64,7 @@
 			<div class="col s4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">perm_identity</i>
-					<input disabled value="<%=cliente.getNome()%>" id="nome"
+					<input disabled value="${cliente.nome}" id="nome"
 						name="nome" type="text" class="validate black-text"> <label
 						for="nome"> <b>Nome</b>
 					</label>
@@ -87,7 +73,7 @@
 
 			<div class="col s4">
 				<div class="input-field">
-					<input disabled value="<%=cliente.getSobrenome()%>" id="sobrenome"
+					<input disabled value="${cliente.sobrenome}" id="sobrenome"
 						name="sobrenome" type="text" class="validate black-text">
 					<label for="sobrenome"> <b>Sobrenome</b>
 					</label>
@@ -103,7 +89,7 @@
 			<div class="col s3">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">
-						done_all</i> <input disabled value="<%=cliente.getRg()%>" id="rg"
+						done_all</i> <input disabled value="${cliente.rg}" id="rg"
 						name="rg" type="text" class="validate black-text">
 					<label for="rg"><h6>
 							<b>RG</b>
@@ -113,7 +99,7 @@
 
 			<div class="col s2">
 				<div class="input-field">
-					<input disabled value="<%=cliente.getExpedidor()%>" id="orgao"
+					<input disabled value="${cliente.expedidor}" id="orgao"
 						name="expedidor" type="text" 
 						class="validate black-text"> <label for="orgao"><h6>
 							<b>Org. Expedidor</b>
@@ -123,7 +109,7 @@
 
 			<div class="col s3">
 				<div class="input-field">
-					<input disabled value="<%=cliente.getCpf()%>" id="cpf" name="cpf"
+					<input disabled value="${cliente.cpf}" id="cpf" name="cpf"
 						type="text" class="validate black-text"> <label
 						for="cpf"><h6>
 							<b>CPF</b>
@@ -139,7 +125,7 @@
 			<div class="col s4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo"> today</i> <input
-						disabled value="<%=cliente.getDataNascimento()%>" id="date"
+						disabled value="${cliente.dataNascimento}" id="date"
 						name="dataNascimento" type="text" class="black-text"> <label
 						for="data"><h6>
 							<b>Data de Nascimento</b>
@@ -157,7 +143,7 @@
 			<div class="col s4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">
-						mode_edit</i> <input disabled value="<%=cliente.getLogradouro()%>"
+						mode_edit</i> <input disabled value="${cliente.logradouro}"
 						id="endereço" name="logradouro" type="text"
 						class="validate black-text"> <label for="endereço"><h6>
 							<b>Endereço</b>
@@ -167,7 +153,7 @@
 
 			<div class="col s1">
 				<div class="input-field">
-					<input disabled value="<%=cliente.getNumero()%>" id="numero"
+					<input disabled value="${cliente.numero}" id="numero"
 						name="numero" type="text" class="validate black-text"> <label
 						for="numero"><h6>
 							<b>Número</b>
@@ -177,7 +163,7 @@
 
 			<div class="col s3">
 				<div class="input-field">
-					<input disabled value="<%=cliente.getBairro()%>" id="bairro"
+					<input disabled value="${cliente.bairro}" id="bairro"
 						name="bairro" type="text" class="validate black-text"> <label
 						for="bairro"><h6>
 							<b>Bairro</b>
@@ -193,7 +179,7 @@
 			<div class="col s4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">
-						location_on</i> <input disabled value="<%=cliente.getCidade()%>"
+						location_on</i> <input disabled value="${cliente.cidade}"
 						id="cidade" name="cidade" type="text" class="validate black-text">
 					<label for="cidade"><h6>
 							<b>Cidade</b>
@@ -203,7 +189,7 @@
 
 			<div class="col s2">
 				<div class="input-field">
-					<input disabled value="<%=cliente.getUf()%>" id="uf" name="uf"
+					<input disabled value="${cliente.uf}" id="uf" name="uf"
 						type="text" class="validate black-text"> <label for="uf"><h6>
 							<b>UF</b>
 						</h6></label>
@@ -212,7 +198,7 @@
 
 			<div class="col s2">
 				<div class="input-field">
-					<input disabled value="<%=cliente.getCep()%>" id="CEP" name="cep"
+					<input disabled value="${cliente.cep}" id="CEP" name="cep"
 						type="text" class="validate black-text"> <label
 						for="numero"><h6>
 							<b>CEP</b>
@@ -226,7 +212,7 @@
 			<div class="col s4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">phone</i> <input
-						disabled value="<%=cliente.getTelefone()%>" id="residencial"
+						disabled value="${cliente.telefone}" id="residencial"
 						name="telefone" type="tel" class="validate black-text"> <label
 						for="residencial"><h6>
 							<b>Telefone Residencial</b>
@@ -237,7 +223,7 @@
 			<div class="col s4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">stay_primary_portrait</i>
-					<input disabled value="<%=cliente.getCelular()%>" id="celular"
+					<input disabled value="${cliente.celular}" id="celular"
 						name="celular" type="tel" class="validate black-text"> <label
 						for="celular"><h6>
 							<b>Telefone Celular</b>
@@ -250,7 +236,7 @@
 			<div class="col s5">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">email</i> <input
-						disabled value="<%=cliente.getEmail()%>" id="email" name="email"
+						disabled value="${cliente.email}" id="email" name="email"
 						type="email" class="validate black-text"> <label
 						for="email" data-error="wrong" data-success="right"><h6>
 							<b>E-mail</b>

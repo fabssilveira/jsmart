@@ -1,18 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page
-	import="java.util.*,
-	br.com.jsmartmarket.jpa.model.Compra,
-	br.com.jsmartmarket.jpa.model.ItensCompra,
-	br.com.jsmartmarket.jpa.dao.ItensCompraDao,
-	br.com.jsmartmarket.jpa.dao.ProdutoDao,
-	br.com.jsmartmarket.jpa.dao.ClienteDao,
-	br.com.jsmartmarket.jpa.dao.CompraDao,
-	br.com.jsmartmarket.jpa.dao.PagamentoDao,
-	br.com.jsmartmarket.jpa.model.Produto,
-	br.com.jsmartmarket.jpa.util.JPAUtil,
-	javax.persistence.EntityManager"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -34,7 +22,8 @@
 <!--Let browser know website is optimized for mobile-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -63,30 +52,11 @@
 
 	<div class="col s12">
 
-		<jsp:useBean id="cliente"
-			class="br.com.jsmartmarket.jpa.model.Cliente" />
-		<jsp:useBean id="compra"
-			class="br.com.jsmartmarket.jpa.model.Compra" />
-		<jsp:useBean id="pagamento"
-			class="br.com.jsmartmarket.jpa.model.Pagamento" />
-		<jsp:useBean id="calculo"
-			class="br.com.jsmartmarket.jpa.controller.CalcularCompra" />
-
-		<%
-			EntityManager em = new JPAUtil().getEntityManager();
-			String login = "" + session.getAttribute("login");
-			String codigoCompra = "" + session.getAttribute("codigoCompra");
-			cliente = new ClienteDao(em).buscaLogin(login);
-			compra = new CompraDao(em).buscaSuaCompra(Integer.parseInt(codigoCompra));
-			pagamento = new PagamentoDao(em).buscaPagamento(compra.getCodigoPagamento());
-		%>
-
 		<div class="row">
 			<div class="row">
 				<div class="col s10">
-					<h4 class="blue-text text-indigo">
-						<%="Bem vindo " + cliente.getNome() + " " + cliente.getSobrenome()%>
-					</h4>
+					<h4 class="blue-text text-indigo">Bem vindo ${cliente.nome}
+						${cliente.sobrenome}</h4>
 				</div>
 				<div class="col s2 right">
 					<ul id="nav‐mobile" class="right hide‐on‐med‐and‐down">
@@ -99,19 +69,16 @@
 		<div class="row">
 			<div lass="row">
 				<div class="col s5">
-					<h5 class="black-text text-indigo">
-						<%="Forma de Pagamento: "+pagamento.getDescricao()%>
-					</h5>
+					<h5 class="black-text text-indigo">Forma de Pagamento:
+						${pagamento.descricao}</h5>
 				</div>
 				<div class="col s4">
-					<h5 class="black-text text-indigo">
-						<%="Data da Compra: "+compra.getDataCompra()%>
-					</h5>
+					<h5 class="black-text text-indigo">Data da Compra:
+						${compra.dataCompra}</h5>
 				</div>
 				<div class="col s3">
-					<h5 class="black-text text-indigo">
-						<%="Valor da Compra: R$ "+calculo.calcular(compra.getCodigoCompra())%>
-					</h5>
+					<h5 class="black-text text-indigo">Valor da Compra: R$
+						${compra.valorCompra}</h5>
 				</div>
 			</div>
 		</div>
@@ -125,28 +92,18 @@
 					<th data-field="total">Valor Total</th>
 				</tr>
 			</thead>
-			<%
-				List<ItensCompra> listaItens = new ItensCompraDao(em).buscaItens(compra.getCodigoCompra());
-			%>
-			<%
-				for (ItensCompra iten: listaItens) {
-					Produto produto = new ProdutoDao(em).buscaProduto(iten.getCodigoProduto());
-			%>
+
 			<tbody>
-				<tr>
-					<td><%=produto.getDescricao() %></td>
-					<td><%=produto.getUnidade() %></td>
-					<td><%=iten.getQuantidade() %></td>
-					<%String valorUnitario = String.format("%.2f",produto.getValorUnitario()); %>
-					<%String valor = String.format("%.2f",(produto.getValorUnitario()*iten.getQuantidade()));%>
-					<td><%="R$ "+valorUnitario%></td>
-					<td><%="R$ "+valor%></td>
-				</tr>
+				<c:forEach var="itemDaCompra" items="${itemDaCompra}">
+					<tr>
+						<td>${itemDaCompra.descricao}</td>
+						<td>${itemDaCompra.unidade}</td>
+						<td>${itemDaCompra.quantidade}</td>
+						<td>${itemDaCompra.valorUnitario}</td>
+						<td>${itemDaCompra.valor}</td>
+					</tr>
+				</c:forEach>
 			</tbody>
-			<%
-				}
-				em.close();
-			%>
 		</table>
 
 	</div>

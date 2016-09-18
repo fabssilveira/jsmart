@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page
-	import="java.util.*,
-	br.com.jsmartmarket.jpa.dao.ClienteDao,
-	br.com.jsmartmarket.jpa.util.JPAUtil,
-	javax.persistence.EntityManager"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -32,8 +27,6 @@
 
 <body>
 
-	<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente" />
-
 	<nav>
 	</ul>
 	<ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -50,15 +43,6 @@
 	</nav>
 
 	<div class="row col s12 indigo"></div>
-
-	<%
-		String login = "" + session.getAttribute("login");
-	%>
-	<%
-		EntityManager em = new JPAUtil().getEntityManager();
-		cliente = new ClienteDao(em).buscaLogin(login);
-		em.close();
-	%>
 
 	<div class="container">
 		<form class="col s12" action="alteraCliente" method="Post">
@@ -80,7 +64,7 @@
 				<div class="col s4">
 					<div class="input-field">
 						<i class="material-icons prefix grey-text text-indigo">perm_identity</i>
-						<input disabled value="<%=cliente.getNome()%>" id="nome"
+						<input disabled value="${cliente.nome}" id="nome"
 							name="nome" type="text" class="validate black-text"> <label
 							for="nome"> <b>Nome</b>
 						</label>
@@ -89,7 +73,7 @@
 
 				<div class="col s4">
 					<div class="input-field">
-						<input disabled value="<%=cliente.getSobrenome()%>" id="sobrenome"
+						<input disabled value="${cliente.sobrenome}" id="sobrenome"
 							name="sobrenome" type="text" class="validate black-text">
 						<label for="sobrenome"> <b>Sobrenome</b>
 						</label>
@@ -105,7 +89,7 @@
 				<div class="col s3">
 					<div class="input-field">
 						<i class="material-icons prefix grey-text text-indigo">
-							done_all</i> <input disabled value="<%=cliente.getRg()%>" id="rg"
+							done_all</i> <input disabled value="${cliente.rg}" id="rg"
 							name="rg" type="text" class="validate black-text">
 						<label for="rg"><h6>
 								<b>RG</b>
@@ -115,7 +99,7 @@
 
 				<div class="col s2">
 					<div class="input-field">
-						<input disabled value="<%=cliente.getExpedidor()%>" id="orgao"
+						<input disabled value="${cliente.expedidor}" id="orgao"
 							name="expedidor" type="text" 
 							class="validate black-text"> <label for="orgao"><h6>
 								<b>Org. Expedidor</b>
@@ -125,7 +109,7 @@
 
 				<div class="col s3">
 					<div class="input-field">
-						<input disabled value="<%=cliente.getCpf()%>" id="cpf" name="cpf"
+						<input disabled value="${cliente.cpf}" id="cpf" name="cpf"
 							type="text" class="validate black-text"> <label
 							for="cpf"><h6>
 								<b>CPF</b>
@@ -141,7 +125,7 @@
 				<div class="col s4">
 					<div class="input-field">
 						<i class="material-icons prefix grey-text text-indigo"> today</i>
-						<input disabled value="<%=cliente.getDataNascimento()%>" id="date"
+						<input disabled value="${cliente.dataNascimento}" id="date"
 							name="dataNascimento" type="text" class="black-text"> <label
 							for="data"><h6>
 								<b>Data de Nascimento</b>
@@ -161,7 +145,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-orange">
 							mode_edit</i> <input id="endereço" name="logradouro" type="text"
-							class="validate" value="<%=cliente.getLogradouro() %>"> <label for="endereço"><h6>
+							class="validate" value="${cliente.logradouro}"> <label for="endereço"><h6>
 								<b>Endereço</b>
 							</h6></label>
 					</div>
@@ -170,7 +154,7 @@
 				<div class="col s1">
 					<div class="input-field">
 						<input id="numero" name="numero" type="text" class="validate"
-						value="<%=cliente.getNumero() %>">
+						value="${cliente.numero}">
 						<label for="numero"><h6>
 								<b>Número</b>
 							</h6></label>
@@ -180,7 +164,7 @@
 				<div class="col s3">
 					<div class="input-field">
 						<input id="bairro" name="bairro" type="text" class="validate"
-						value="<%=cliente.getBairro() %>">
+						value="${cliente.bairro}">
 						<label for="bairro"><h6>
 								<b>Bairro</b>
 							</h6></label>
@@ -196,7 +180,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-indigo">
 							location_on</i> <input id="cidade" name="cidade" type="text"
-							class="validate" value="<%=cliente.getCidade() %>"> <label for="cidade"><h6>
+							class="validate" value="${cliente.cidade}"> <label for="cidade"><h6>
 								<b>Cidade</b>
 							</h6></label>
 					</div>
@@ -205,7 +189,7 @@
 				<div class="col s2">
 					<div class="input-field">
 						<select name="uf">
-							<option value="<%=cliente.getUf() %>"><%=cliente.getUf() %></option>
+							<option value="${cliente.uf}">${cliente.uf}</option>
 							<option value="SP">SP</option>
 							<option value="MG">MG</option>
 							<option value="RJ">RJ</option>
@@ -218,7 +202,7 @@
 				<div class="col s2">
 					<div class="input-field">
 						<input id="CEP" name="cep" type="text" 
-							class="validate" value="<%=cliente.getCep() %>"> <label for="numero"><h6>
+							class="validate" value="${cliente.cep}"> <label for="numero"><h6>
 								<b>CEP</b>
 							</h6></label>
 					</div>
@@ -233,7 +217,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-indigo">phone</i>
 						<input id="residencial" name="telefone" type="tel"
-							class="validate" value="<%=cliente.getTelefone() %>"> <label for="residencial"><h6>
+							class="validate" value="${cliente.telefone}"> <label for="residencial"><h6>
 								<b>Telefone Residencial</b>
 								<h6></label>
 					</div>
@@ -243,7 +227,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-indigo">stay_primary_portrait</i>
 						<input id="celular" name="celular" type="tel" class="validate"
-						value="<%=cliente.getCelular() %>">
+						value="${cliente.celular}">
 						<label for="celular"><h6>
 								<b>Telefone Celular</b>
 								<h6></label>
@@ -257,7 +241,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix orange-text text-indigo">email</i>
 						<input id="email" name="email" type="email" class="validate"
-						value="<%=cliente.getEmail() %>">
+						value="${cliente.email}">
 						<label for="email" data-error="wrong" data-success="right"><h6>
 								<b>E-mail</b>
 							</h6></label>

@@ -3,7 +3,6 @@ package br.com.jsmartmarket.jpa.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -28,18 +27,8 @@ public class CompraDao{
 		return retorno;
 	}
 	
-	public Compra buscaSuaCompra(int codigoCompra){
-		
-		Query qr = em.createQuery("select c from Compra as c "+
-		          "where c.codigoCompra = :codigoCompra");
-		qr.setParameter("codigoCompra", codigoCompra);
-		
-		try{
-			Compra retorno = (Compra) qr.getSingleResult();
-			return retorno;
-		}catch(NoResultException e){
-			return null;
-		}
+	public Compra consulta(int codigoCompra){
+		return em.find(Compra.class, codigoCompra);
 	}
 
 }

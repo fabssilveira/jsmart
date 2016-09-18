@@ -13,6 +13,7 @@ public class Compra {
 	private int codigoCliente;
 	private int codigoPagamento;
 	private String dataCompra;
+	private String valorCompra;
 	
 	public int getCodigoCompra() {
 		return codigoCompra;
@@ -37,6 +38,12 @@ public class Compra {
 	}
 	public void setDataCompra(String dataCompra) {
 		this.dataCompra = dataCompra;
+	}
+	public String getValorCompra() {
+		return valorCompra;
+	}
+	public void setValorCompra(String valorCompra) {
+		this.valorCompra = valorCompra;
 	}
 	
 }

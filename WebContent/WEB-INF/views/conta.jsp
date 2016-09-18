@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page
-	import="java.util.*,
-	br.com.jsmartmarket.jpa.model.Compra,
-	br.com.jsmartmarket.jpa.model.ItensCompra,
-	br.com.jsmartmarket.jpa.dao.ClienteDao,
-	br.com.jsmartmarket.jpa.dao.CompraDao,
-	br.com.jsmartmarket.jpa.util.JPAUtil,
-	javax.persistence.EntityManager"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -30,13 +22,11 @@
 <!--Let browser know website is optimized for mobile-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 </head>
 
 <body>
-
-	<jsp:useBean id="cliente" class="br.com.jsmartmarket.jpa.model.Cliente" />
-	<jsp:useBean id="calculo" class="br.com.jsmartmarket.jpa.controller.CalcularCompra" />
 
 	<!-- conteudo do site-->
 	<!--          adicionar depois <img class="logo" src="assets/media/img/img.logo.png"></img>         -->
@@ -63,24 +53,16 @@
 
 	<div class="col s12">
 
-		<%
-			String login = "" + session.getAttribute("login");
-		%>
-		<%
-			EntityManager em = new JPAUtil().getEntityManager();
-			cliente = new ClienteDao(em).buscaLogin(login);
-		%>
-
 		<div class="row">
 			<div class="row">
 				<div class="col s10">
-					<h4 class="blue-text text-indigo"> 
-						<%="Bem vindo " + cliente.getNome() + " " + cliente.getSobrenome()%>
-					</h4>
+					<h4 class="blue-text text-indigo">Bem vindo ${cliente.nome}
+						${cliente.sobrenome}</h4>
 				</div>
 				<div class="col s2 right">
 					<ul id="nav‐mobile" class="right hide‐on‐med‐and‐down">
-						<a class="waves‐effect waves‐light btn" href="meusDados">Meus Dados </a>
+						<a class="waves‐effect waves‐light btn" href="meusDados">Meus
+							Dados </a>
 					</ul>
 				</div>
 			</div>
@@ -93,25 +75,19 @@
 					<th data-field="valor">Valor da Compra</th>
 				</tr>
 			</thead>
-			<%
-				List<Compra> compras = new CompraDao(em).buscaCompras(cliente.getCodigoCliente());
-			%>
-			<%
-				for (Compra compra : compras) {
-			%>
+
 			<tbody>
-				<tr>
-					<td><%=compra.getDataCompra()%></td>
-					<td><%="R$ "+calculo.calcular(compra.getCodigoCompra())%>
-					<td><li><a href="compra?codigo=<%=compra.getCodigoCompra() %>">Detalhes</a></li></td>
-				</tr>
+				<c:forEach var="compra" items="${compras}">
+					<tr>
+						<td>${compra.dataCompra}</td>
+						<td>R$ ${compra.valorCompra}</td>
+						<td><li><a
+							href="compra?codigo=${compra.codigoCompra}">Detalhes</a></li></td>
+					</tr>
+				</c:forEach>
 			</tbody>
-			<%
-				}
-				em.close();
-			%>
 		</table>
-		
+
 	</div>
 	</div>
 

@@ -23,6 +23,10 @@ public class ClienteDao {
 		em.persist(cliente);
 	}
 	
+	public Cliente consultar(int codigo){
+		return em.find(Cliente.class, codigo);
+	}
+	
 	public Cliente buscaLogin(String userLogin){
 		
 		Query qr = em.createQuery("select c from Cliente as c "+
