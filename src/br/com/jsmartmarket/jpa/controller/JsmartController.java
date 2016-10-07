@@ -51,31 +51,6 @@ public class JsmartController {
 	
 	@RequestMapping("/gravaCliente")
 	public String gravaCliente(Cliente cliente, String confirmaSenha){
-		
-		if(cliente.getNome().equals("") || cliente.getCpf().equals("")
-				|| cliente.getUserLogin().equals("") || cliente.getSenha().equals("")
-				|| cliente.getEmail().equals("") || cliente.getTelefone().equals("")){
-			return "formulario3";
-		}
-		
-		if(cliente.getSenha().equals(confirmaSenha)){
-			String senha = gerarSenha(cliente.getSenha());
-			cliente.setSenha(senha);
-		}else{
-			return "formulario4";
-		}
-		
-		Cliente cadastro = new Cliente();
-		
-		cadastro = clienteDao.buscaCpf(cliente.getCpf());
-		if(cadastro != null){
-			return "formulario2";
-		}
-		cadastro = clienteDao.buscaLogin(cliente.getUserLogin());
-		if(cadastro != null){
-			return "formulario2";
-		}
-		
 		clienteDao.salvar(cliente);
 		return "redirect:index.html";
 	}

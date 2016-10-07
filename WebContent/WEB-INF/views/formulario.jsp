@@ -45,7 +45,7 @@
 
 	<div class="container">
 
-		<form class="col s12" action="gravaCliente" method="Post">
+		<form class="col s12" action="gravaCliente" method="Post" id="form-cadastro">
 
 			<!-- Nome e Sobre Nome -->
 
