@@ -1,5 +1,4 @@
-﻿//Inicializa componentes do materializzecss
-$(document).ready(function() {
+﻿$(document).ready(function() {
 	$('input#input_text, textarea#textarea1').characterCounter();
 });
 
@@ -49,53 +48,44 @@ $(document).ready(function() {
 	$('.carousel').carousel();
 });
 
-//funções do site
-
-function validaSenha() {
-	if (document.querySelector('#senha').value != document.querySelector('#confirmasenha').value) {
-		alert('As senhas digitadas não estão iguais!');
-		return false;
-	}
-}
-
-function validaCPF() {
-	if (document.querySelector('#cpf').value == '') {
-		alert('O Campo CPF não pode estar vazio!');
-		return false;
-	}
-}
-
-function validaNome() {
+function validaCampos() {
 	if (document.querySelector('#nome').value == '') {
-		alert('O Campo Nome não pode estar vazio!');
+		var lblNome = document.querySelector("#lblNome");
+		lblNome.textContent = "Nome: Campo Obrigatório!";
+		lblNome.style.color = "red"
 		return false;
 	}
-}
-
-function validaEmail() {
-	if (document.querySelector('#email').value == '') {
-		alert('O Campo E-Mail não pode estar vazio!');
+	if (document.querySelector('#cpf').value == '') {
+		var lblCpf = document.querySelector("#lblCpf");
+		lblCpf.textContent = "CPF: Campo Obrigatório!";
+		lblCpf.style.color = "red"
 		return false;
 	}
-}
-
-function validaTel() {
 	if (document.querySelector('#residencial').value == '') {
-		alert('O Campo Telefone Residencial não pode estar vazio!');
+		var lblTel = document.querySelector("#lblTel");
+		lblTel.textContent = "Telefone Residencial: Campo Obrigatório!";
+		lblTel.style.color = "red"
 		return false;
 	}
-}
-
-function validaLogin() {
+	if (document.querySelector('#email').value == '') {
+		var lblEmail = document.querySelector("#lblEmail");
+		lblEmail.textContent = "E-Mail:: Campo Obrigatório!";
+		lblEmail.style.color = "red"
+		return false;
+	}
 	if (document.querySelector('#login').value == '') {
-		alert('O Campo Login não pode estar vazio!');
+		var lblLogin = document.querySelector("#lblLogin");
+		lblLogin.textContent = "Login: Campo Obrigatório!";
+		lblLogin.style.color = "red"
+		return false;
+	}
+	if (document.querySelector('#senha').value != document
+			.querySelector('#confirmasenha').value) {
+		var lblSenha = document.querySelector("#lblSenha");
+		lblSenha.textContent = "A Senha não Confere!";
+		lblSenha.style.color = "red"
 		return false;
 	}
 }
 
-document.querySelector('#form-cadastro').onsubmit = validaSenha;
-document.querySelector('#form-cadastro').onsubmit = validaCPF;
-document.querySelector('#form-cadastro').onsubmit = validaNome;
-document.querySelector('#form-cadastro').onsubmit = validaEmail;
-document.querySelector('#form-cadastro').onsubmit = validaTel;
-document.querySelector('#form-cadastro').onsubmit = validaLogin;
+document.querySelector('#form-cadastro').onsubmit = validaCampos;

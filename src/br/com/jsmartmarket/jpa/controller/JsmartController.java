@@ -50,11 +50,14 @@ public class JsmartController {
 	private float valorTotal;
 	
 	@RequestMapping("/gravaCliente")
-	public String gravaCliente(Cliente cliente, String confirmaSenha){
+	public String gravaCliente(Cliente cliente){
+		String senha = gerarSenha(cliente.getSenha());
+		cliente.setSenha(senha);
 		clienteDao.salvar(cliente);
 		return "redirect:index.html";
 	}
 	
+		
 	@RequestMapping("/alteraCliente")
 	public String alteraCliente(Cliente cliente, HttpSession session,
 			HttpServletRequest req, HttpServletResponse res){

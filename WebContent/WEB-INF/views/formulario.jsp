@@ -27,7 +27,6 @@
 <body>
 
 	<nav>
-	</ul>
 	<ul id="nav-mobile" class="left hide-on-med-and-down">
 		<a class="waves-effect red-text white btn-large center-right"
 			href="index.html"><i class="material-icons right red-text">fast_rewind</i>Voltar</a>
@@ -45,7 +44,8 @@
 
 	<div class="container">
 
-		<form class="col s12" action="gravaCliente" method="Post" id="form-cadastro">
+		<form class="col s12" action="gravaCliente" method="Post"
+			id="form-cadastro">
 
 			<!-- Nome e Sobre Nome -->
 
@@ -59,7 +59,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">perm_identity</i>
 						<input id="nome" name="nome" type="text" class="validate">
-						<label for="nome"> <b>Nome</b>
+						<label for="nome"> <b id="lblNome">Nome</b>
 						</label>
 					</div>
 				</div>
@@ -154,7 +154,7 @@
 						<i class="material-icons prefix blue-text text-indigo">phone</i> <input
 							id="residencial" name="telefone" type="tel" class="validate">
 						<label for="residencial"><h6>
-								<b>Telefone Residencial</b>
+								<b id="lblTel">Telefone Residencial</b>
 								<h6></label>
 					</div>
 				</div>
@@ -197,7 +197,7 @@
 					<div class="input-field">
 						<input id="cpf" name="cpf" type="text" class="validate"> <label
 							for="cpf"><h6>
-								<b>CPF</b>
+								<b id="lblCpf">CPF</b>
 							</h6></label>
 					</div>
 				</div>
@@ -227,7 +227,7 @@
 						<i class="material-icons prefix blue-text text-indigo">email</i> <input
 							id="email" name="email" type="email" class="validate"> <label
 							for="email" data-error="wrong" data-success="right"><h6>
-								<b>E-mail</b>
+								<b id="lblEmail">E-mail</b>
 							</h6></label>
 					</div>
 				</div>
@@ -246,7 +246,7 @@
 						<i class="material-icons prefix green-text">perm_identity</i> <input
 							id="login" name="userLogin" type="text" class="validate">
 						<label for="login"><h6>
-								<b>Login</b>
+								<b id="lblLogin">Login</b>
 							</h6></label>
 					</div>
 				</div>
@@ -271,14 +271,11 @@
 						<i class="material-icons prefix green-text">replay</i> <input
 							id="confirmasenha" name="confirmaSenha" type="password"
 							class="validate"> <label for="confirmasenha"><h6>
-								<b>Confirmar Senha</b>
+								<b id="lblSenha">Confirmar Senha</b>
 							</h6></label>
 					</div>
 				</div>
 			</div>
-
-
-
 
 			<button class="btn waves-effect waves-light" type="submit"
 				name="action">
@@ -301,7 +298,6 @@
 		src="assets/lib/jquery/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript"
 		src="assets/lib/materialize/js/materialize.min.js"></script>
-
 	<script type="text/javascript" src="assets/js/jsmart.js"></script>
 </body>
 </html>
