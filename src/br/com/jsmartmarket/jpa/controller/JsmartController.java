@@ -1,5 +1,6 @@
 package br.com.jsmartmarket.jpa.controller;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.jsmartmarket.jpa.dao.ClienteDao;
@@ -191,6 +193,16 @@ public class JsmartController {
 		}
 		return "redirect:index.html";
 	}
+	
+	@RequestMapping("/testaLogin")
+	public void testaLogin(String login, HttpServletResponse response) throws IOException {
+		Cliente cliente = clienteDao.buscaLogin(login);
+		if(cliente != null){
+			response.setStatus(200);
+		}else{
+			response.sendError(0);
+		}
+	}	
 	
 	public String gerarSenha(String senha){
 		String valorParaSenha = senha;

@@ -244,8 +244,8 @@
 				<div class="col s4">
 					<div class="input-field">
 						<i class="material-icons prefix green-text">perm_identity</i> <input
-							id="login" name="userLogin" type="text" class="validate">
-						<label for="login"><h6>
+							id="login" name="userLogin" type="text" class="validate"
+							onchange="testaLogin()"> <label for="login"><h6>
 								<b id="lblLogin">Login</b>
 							</h6></label>
 					</div>
@@ -285,13 +285,22 @@
 		</form>
 	</div>
 
-
 	<!-- Rodape -->
 	<footer class="page-footer  indigo">
 	<div class="footer-copyright">
 		<div class="container center">2016 Copyright JSmart Market</div>
 	</div>
 	</footer>
+
+	<script = type="text/javascript">
+		function testaLogin(id) {
+			$.get("testaLogin?login=" + $('#login').val(), function(resposta) {
+				var lblLogin = document.querySelector("#lblLogin");
+				alert('Login já existente! Escolha outro por favor!');
+				document.getElementById("login").value = "";
+			});
+		}
+	</script>
 
 	<!--Import JavaScript-->
 	<script type="text/javascript"
