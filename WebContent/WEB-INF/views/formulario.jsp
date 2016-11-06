@@ -29,7 +29,7 @@
 	<nav>
 	<ul id="nav-mobile" class="left hide-on-med-and-down">
 		<a class="waves-effect red-text white btn-large center-right"
-			href="index.html"><i class="material-icons right red-text">fast_rewind</i>Voltar</a>
+			href="index.jsp"><i class="material-icons right red-text">fast_rewind</i>Voltar</a>
 	</ul>
 	<div class="nav-wrapper ">
 

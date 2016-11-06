@@ -56,7 +56,7 @@ public class JsmartController {
 		String senha = gerarSenha(cliente.getSenha());
 		cliente.setSenha(senha);
 		clienteDao.salvar(cliente);
-		return "redirect:index.html";
+		return "redirect:index.jsp";
 	}
 	
 		
@@ -85,7 +85,8 @@ public class JsmartController {
 	}
 
 	@RequestMapping("/login")
-	public String paginaInicial(Cliente cliente, HttpSession session){
+	public String paginaInicial(Cliente cliente, HttpSession session, HttpServletRequest req, 
+			HttpServletResponse res){
 		
 		String senha = gerarSenha(cliente.getSenha());
 		Cliente autorizado = clienteDao.buscaLogin(cliente.getUserLogin());
@@ -97,7 +98,8 @@ public class JsmartController {
 			session.setAttribute("login", autorizado.getUserLogin());
 			return "paginaInicial";
 		}
-		return "redirect:index.html";
+		req.setAttribute("erroLogin", "erro");
+		return "index";
 	}
 	
 	@RequestMapping("/formulario")
@@ -110,7 +112,7 @@ public class JsmartController {
 		if(session.getAttribute("usuarioLogado") != null){
 			return "historia";
 		}
-		return "redirect:index.html";
+		return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/conta")
@@ -127,7 +129,7 @@ public class JsmartController {
 			req.setAttribute("compras", compras);
 			return "conta";
 		}
-		return "redirect:index.html";
+		return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/paginaInicial")
@@ -135,7 +137,7 @@ public class JsmartController {
 		if(session.getAttribute("usuarioLogado") != null){
 			return "paginaInicial";
 		}
-		return "redirect:index.html";
+		return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/logout")
@@ -143,7 +145,7 @@ public class JsmartController {
 		if(session.getAttribute("usuarioLogado") != null){
 			session.invalidate();
 		}
-		return "redirect:index.html";
+		return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/compra")
@@ -169,7 +171,7 @@ public class JsmartController {
 			req.setAttribute("itemDaCompra", itemDaCompra);
 			return "compra";
 		}
-		return "redirect:index.html";
+		return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/meusDados")
@@ -180,7 +182,7 @@ public class JsmartController {
 			req.setAttribute("cliente", cliente);
 			return "meusDados";
 		}
-		return "redirect:index.html";
+		return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/alteracaoDados")
@@ -191,7 +193,7 @@ public class JsmartController {
 			req.setAttribute("cliente", cliente);
 			return "alteracaoDados";
 		}
-		return "redirect:index.html";
+		return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/testaLogin")
