@@ -1,7 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,46 +28,59 @@
 			<form class="" action="login" method="post">
 				<div class="row">
 					<div class="col s12">
-						<div class="input-image col s4	 ">
+						<div class="input-image">
 
-							<img class="image col s3 " src="assets/media/img/img.logo.png"><b><h4>JSmart Market</h4></b>
+							<img class="image" src="assets/media/img/img.logo.png"><b></b>
+							<a class="waves-effect red btn modal-trigger right" href="#modal1">Login
+							/ Cadastro</a>
 						</div>
 
 						<!-- Modal Trigger -->
 
-						<a class="waves-effect red btn modal-trigger right" href="#modal1">Login
-							/ Cadastro</a>
+						
 
-						<!-- Modal Structure -->
-						<div id="modal1" class="modal">
+							
+							<div id="modal1" class="modal">
 							<div class="modal-content center">
 
 								<h4>Acesso</h4>
 
-								<div class="row "></div>
+								<div class="row">
 								
-								<div class="row black">
-									<div class="input-field col s11">
+								
+									<div class="col s12 m12 indigo darken-4">
+										<div class="input-field col s11 m11">
 										<i class="material-icons prefix indigo-text">account_circle</i>
-										<input id="icon_prefix" type="text" name="userLogin" class="validate">
+										<input id="icon_prefix" type="text"  name="userLogin" class="validate">
 										<label for="icon_prefix"></label>
+										</div>
 									</div>
-								</div>
+								
+								<div class="row"></div>
 
-								<div class="row black">
-									<div class="input-field col s11 ">
-										<i class="material-icons prefix indigo-text">vpn_key</i> <input
-											id="icon_prefix" type="password" name="senha" class="validate"> <label
+								<div class="col s12 m12 indigo darken-4">
+									<div class="input-field col s11 m11">
+											<i class="material-icons prefix indigo-text">vpn_key</i> <input
+											id="icon_prefix" type="password"   name="senha" class="validate"> <label
 											for="icon_prefix"></label>
+										</div>
 									</div>
 								</div>
+								
+								
 
 								<div class="modal-footer indigo">
 									<button type="submit" name="action"
-										class=" modal-action modal-close indigo white-text btn-flat">Entrar</button>
+										class=" modal-action modal-close indigo white-text indigo darken-4 btn-flat col s4 m4">Entrar</button>
 									<a href="formulario"
-										class=" modal-action modal-close indigo red-text btn-flat left"><b>Cadastrar</b></a>
+										class=" modal-action modal-close indigo orange-text indigo darken-1 btn-flat left col s6 m3"><b>Cadastrar</b></a>
 								</div>
+								
+								<div class="row"> </div>
+								<div class="divider"> </div>
+								<button type="submit" name="action"
+										class=" modal-action modal-close indigo red-text  text-darken-2 btn-flat col s8 m3">Esqueci a senha</button>
+		
 								
 							</div>
 						</div>
@@ -80,15 +89,19 @@
 			</form>
 		</div>
 	</nav>
+		
 
 	<!-- Conteudo do Site -->
 	<div id="content">
 		<!-- Cabecalho conteudo -->
+	
+	
 		<div class="row center blue-text">
+		
 			<h3>Ofertas</h3>
 		</div>
 		<div class="row">
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
 						<img class="activator" src="assets/media/img/img.cerveja.png">
@@ -106,25 +119,25 @@
 					</div>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
 						<img class="activator" src="assets/media/img/img.carne.png">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Carne
-							Contra Fil√©<i class="material-icons right">more_vert</i>
+							Contra FilÈ<i class="material-icons right">more_vert</i>
 						</span>
 						<p></p>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><b>Contra
-								Fil√©</b><i class="material-icons right">close</i></span>
-						<p>Todo dia √© dia de churrasco, confira nossos pre√ßos !</p>
+								FilÈ</b><i class="material-icons right">close</i></span>
+						<p>Todo dia È dia de churrasco, confira nossos preÁos !</p>
 					</div>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
 						<img class="activator" src="assets/media/img/img.maguary.png">
@@ -143,7 +156,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
 						<img class="activator" src="assets/media/img/img.fruta.png">
@@ -163,15 +176,20 @@
 			</div>
 		</div>
 
+		<div class="row"> </div>
+		<div class="divider"> </div>
+		<div class="row"> </div>
+		<div class="row"> </div>
+		
 		<!-- Cabecalho conteudo -->
 		<div class="row center blue-text">
 			<h3>Produtos Recomendados</h3>
 		</div>
 		<div class="row">
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
-						<img class="activator" src="assets/media/img/img.peixe.jpg">
+						<img class="activator" src="assets/media/img/img.peixe.png">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Peixes
@@ -186,25 +204,25 @@
 					</div>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
-						<img class="activator" src="assets/media/img/img.chocolate.jpg">
+						<img class="activator" src="assets/media/img/img.chocolate.png">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Bombom
-							Nestl√©<i class="material-icons right">more_vert</i>
+							NestlÈ<i class="material-icons right">more_vert</i>
 						</span>
 						<p></p>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><b>Bombom
-								Nestl√©</b><i class="material-icons right">close</i></span>
+								NestlÈ</b><i class="material-icons right">close</i></span>
 						<p>Uma Variedade de chocolate.</p>
 					</div>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
 						<img class="activator" src="assets/media/img/img.arroz.png">
@@ -218,43 +236,54 @@
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4"><b>Arroz
 								Albaruska</b><i class="material-icons right">close</i></span>
-						<p>O verdadeiro arroz de pil√£o.</p>
+						<p>O verdadeiro arroz de pil„o.</p>
 					</div>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
-						<img class="activator" src="assets/media/img/img.omo.jpg">
+						<img class="activator" src="assets/media/img/img.omo.png">
 					</div>
 					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">Sab√£o
-							em P√≥ OMO<i class="material-icons right">more_vert</i>
+						<span class="card-title activator grey-text text-darken-4">Sab„o
+							em PÛ OMO<i class="material-icons right">more_vert</i>
 						</span>
 						<p></p>
 					</div>
 					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4"><b>Sab√£o
-								em P√≥ OMO</b><i class="material-icons right">close</i></span>
-						<p>O sab√£o em p√≥ para suas roupas mais branquinhas.</p>
+						<span class="card-title grey-text text-darken-4"><b>Sab„o
+								em PÛ OMO</b><i class="material-icons right">close</i></span>
+						<p>O sab„o em pÛ para suas roupas mais branquinhas.</p>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<div class="row"> </div>
+		<div class="divider"> </div>
+		<div class="row"> </div>
+		<div class="row"> </div>	
+		
+		<div class="row center green-text">
+		
+			<h3>Diferencial</h3>
+		</div>
+		
 		<div class="row">
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="center promo promo-example">
 					<i class="material-icons green-text large">loyalty</i>
 					<p class="promo-caption">
 					<h5>
-						<b>SELE√á√ÉO ESPECIAL</b>
+						<b>SELE«√O ESPECIAL</b>
 					</h5>
 					</p>
-					<p class="light center">Nossos Funcion√°rios sabem selecionar os
-						melhores produtos e deix√°-los prontinhos para o transporte.</p>
+					<p class="light center">Nossos Funcion·rios sabem selecionar os
+						melhores produtos e deix·-los prontinhos para o transporte.</p>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="center promo promo-example">
 					<i class="material-icons green-text large">thumb_up</i>
 					<p class="promo-caption">
@@ -263,10 +292,10 @@
 					</h5>
 					</p>
 					<p class="light center">Entrega tradicional, Agendada, Express.
-						Clique e Retire.Quer mais? Na 1¬∫compra, o frete √© gr√°tis.</p>
+						Clique e Retire.Quer mais? Na 1∫compra, o frete È gr·tis.</p>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="center promo promo-example">
 					<i class="material-icons green-text large">done_all</i>
 					<p class="promo-caption">
@@ -274,20 +303,20 @@
 						<b>SEMPRE FRESQUINHO</b>
 					</h5>
 					</p>
-					<p class="light center">Nossos caminh√µes t√™m tecnologia para
+					<p class="light center">Nossos caminhıes tÍm tecnologia para
 						transportar cada produto na temperatura ideal.</p>
 				</div>
 			</div>
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="center promo promo-example">
 					<i class="material-icons green-text large">schedule</i>
 					<p class="promo-caption">
 					<h5>
-						<b>TROCA R√ÅPIDA E F√ÅCIL</b>
+						<b>TROCA R¡PIDA E F¡CIL</b>
 					</h5>
 					</p>
-					<p class="light center">Se os produtos n√£o chegarem com o
-						padr√£o JSmartMarket, n√≥s trocamos o item sem complica√ß√£o.</p>
+					<p class="light center">Se os produtos n„o chegarem com o
+						padr„o JSmartMarket, nÛs trocamos o item sem complicaÁ„o.</p>
 				</div>
 			</div>
 		</div>
@@ -303,10 +332,10 @@
 	<script type="text/javascript">
 		var teste = '${erroLogin}';
 		if(teste != ''){
-			alert('Login inv√°lido! Tente Novamente.')
+			alert('Senha inv·lida! Tente Novamente.')
 		}
 	</script>
-	
+
 	<!--Import JavaScript-->
 	<script type="text/javascript"
 		src="assets/lib/jquery/jquery-2.1.4.min.js"></script>

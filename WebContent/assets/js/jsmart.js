@@ -2,6 +2,13 @@
 	$('input#input_text, textarea#textarea1').characterCounter();
 });
 
+$(".button-collapse").sideNav();
+ 
+ 
+
+      $('.parallax').parallax();
+   
+
 $('.datepicker')
 		.pickadate(
 				{
@@ -90,3 +97,7 @@ function validaCampos() {
 }
 
 document.querySelector('#form-cadastro').onsubmit = validaCampos;
+
+
+
+

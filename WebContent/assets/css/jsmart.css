@@ -1,17 +1,18 @@
-.modal { 
-max-height: 80%; 
-max-width:30%;
-background: #3f51b5 ;
-
-}
-
-.modal-content{
+.parallax-container {
+      height: 200px;;
+    }
+	
+	.modal-content{
 	background-color: #3f51b5;
 	opacity:0.65;
 	-moz-opacity: 0.65;
 	filter: alpha(opacity=65);
 }
 
+.modal { 
+background: #3f51b5 ;
+
+}
 
 
 .center {

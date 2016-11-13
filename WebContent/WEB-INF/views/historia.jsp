@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,30 +29,47 @@
 	<!--          adicionar depois <img class="logo" src="assets/media/img/img.logo.png"></img>         -->
 
 	<nav>
-		<div class="nav-wrapper indigo">
-			<a href="#" class="brand-logo center green-text text-accent-3">Um
-				pouco sobre o JSmart Market</a>
-
-			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginaInicial">Página Inicial</a></li>
-				<li><a href="historia">História</a></li>
-				<li><a href="conta">Sua Conta</a></li>
-			</ul>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<a class="waves-effect waves-light red-text orange btn-large center"
-					href="logout"
-					id="logout"><i class="material-icons right red-text">power_settings_new</i>Logout</a>
-			</ul>
-		</div>
-
+	<div class="nav-wrapper indigo">
+		<a href="paginaInicial" class="brand-logo"><img class="image"
+			src="assets/media/img/img.logo.png"></a> <a href="#"
+			data-activates="mobile-demo" class="button-collapse"><i
+			class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down">
+			<li><a href="paginaInicial">Página Inicial</a></li>
+			<li><a href="historia">História</a></li>
+			<li><a href="conta">Sua Conta</a></li>
+			<li><a
+				class="waves-effect waves-light black-text grey btn-large"
+				href="logout" id="logout"><i
+					class="material-icons right red-text">power_settings_new</i>Logout</a></li>
+		</ul>
+		<ul class="side-nav" id="mobile-demo">
+			<li><a href="paginaInicial">Página Inicial</a></li>
+			<li><a href="hitoria">História</a></li>
+			<li><a href="conta">Sua Conta</a></li>
+			<li><a
+				class="waves-effect waves-light black-text grey btn-large"
+				href="logout" id="logout"><i
+					class="material-icons right red-text">power_settings_new</i>Logout</a></li>
+		</ul>
+	</div>
 	</nav>
 
 	<!-- cards -->
 
+	<div class="row"> </div>
+	<div class="row"> </div>
 	<div class="row center red-text text-lighten-2">
-		<h3>Protótipo do Carrinho inteligente JSmart Market</h3>
+		<h4>Protótipo do Carrinho inteligente JSmart Market</h4>
 	</div>
 
+	<div class="divider"> </div>
+	
+	<div class="row"> </div>
+	<div class="row center indigo-text text-lighten-2">
+		<h4>Imagens do Protótipo</h4>
+	</div>
+	
 	<div class="carousel">
 		<a class="carousel-item" href="#one!"><img
 			src="assets/media/img/img.01.jpg"></a> <a class="carousel-item"
@@ -71,29 +88,34 @@
 
 	</div>
 
-	<div class="row s2 ">
+	
+	<div class="divider"> </div>
+	
+	<div class="row"> </div>
+	<div class="row center indigo-text text-lighten-2">
+		<h4>Video Demonstrativo</h4>
+	</div>
+	<div class="row ">
 
-		<div class="col s6 ">
+		<div class="col s12 M7 ">
 			<div class="video-container">
 				<iframe width="853" height="800" src="assets/media/video/video.mp4"
 					frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 
-		<div class="col s6 left">
+		<div class="col s12 M5 left">
 			<div class="card-panel red lighten-2">
-				<span class="white-text"><h5>O sistema de anti-fraude do
+				<span class="white-text"><h6>O sistema de anti-fraude do
 						JSmart Market, requer a sincronização dos sensores de movimento
 						juntamente com a placa Raspberry, que identifica qualquer
-						produto que é colocado dentro do carrinho.</h5></span>
+						produto que é colocado dentro do carrinho.</h6></span>
 			</div>
 		</div>
 
 	</div>
 
-	<div class="row blue-text col s6 center">
-		<h5>Vídeo Demonstrativo</h5>
-	</div>
+	
 </body>
 
 <!-- Rodape -->

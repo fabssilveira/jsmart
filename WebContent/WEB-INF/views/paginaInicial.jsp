@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -25,44 +25,53 @@
 
 <body>
 	<nav>
-		<div class="nav-wrapper indigo">
-			<a href="#" class="brand-logo center">Bem vindo ao Mundo JSmart
-				Market</a>
-
-			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="paginaInicial">Página Inicial</a></li>
-				<li><a href="historia">História</a></li>
-				<li><a href="conta">Sua Conta</a></li>
-			</ul>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<a class="waves-effect waves-light red-text orange btn-large"
-					href="logout"
-					id="logout"><i class="material-icons right red-text">power_settings_new</i>Logout</a>
-			</ul>
-		</div>
-
+	<div class="nav-wrapper indigo">
+		<a href="paginaInicial" class="brand-logo"><img class="image"
+			src="assets/media/img/img.logo.png"></a> <a href="#"
+			data-activates="mobile-demo" class="button-collapse"><i
+			class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down">
+			<li><a href="paginaInicial">Página Inicial</a></li>
+			<li><a href="historia">História</a></li>
+			<li><a href="conta">Sua Conta</a></li>
+			<li><a
+				class="waves-effect waves-light black-text grey btn-large"
+				href="logout" id="logout"><i
+					class="material-icons right red-text">power_settings_new</i>Logout</a></li>
+		</ul>
+		<ul class="side-nav" id="mobile-demo">
+			<li><a href="paginaInicial">Página Inicial</a></li>
+			<li><a href="hitoria">História</a></li>
+			<li><a href="conta">Sua Conta</a></li>
+			<li><a
+				class="waves-effect waves-light black-text grey btn-large"
+				href="logout" id="logout"><i
+					class="material-icons right red-text">power_settings_new</i>Logout</a></li>
+		</ul>
+	</div>
 	</nav>
-
+	
+			
 	<div class="slider indigo">
 		<ul class="slides">
-			<li><img src="assets/media/img/img.sonhando.jpg"> <!-- random image -->
+			<li><img src="assets/media/img/img.sonhando.png"> <!-- random image -->
 				<div class="caption green-text center-align">
 					<h3>JSmart Market!</h3>
 					<h5 class="light green-text text-lighten-3">O carrinho de supermercado inteligente.</h5>
 				</div></li>
-			<li><img src="assets/media/img/img.desafios.jpg"> <!-- random image -->
+			<li><img src="assets/media/img/img.desafios.png"> <!-- random image -->
 				<div class="caption orange-text left-align">
 					<h3>Planejamento!</h3>
 					<h5 class="light orange-text text-lighten-3">Você precisa
 						manter o foco em sua jornada para realizar grandes coisas.</h5>
 				</div></li>
-			<li><img src="assets/media/img/img.arvores.jpg"> <!-- random image -->
+			<li><img src="assets/media/img/img.arvores.png"> <!-- random image -->
 				<div class="caption right-align">
 					<h3>Conquistas!</h3>
 					<h5 class="light grey-text text-lighten-3">Não basta
 						conquistar a sabedoria, É preciso usá-la.</h5>
 				</div></li>
-			<li><img src="assets/media/img/img.aventura.jpg"> <!-- random image -->
+			<li><img src="assets/media/img/img.aventura.png"> <!-- random image -->
 				<div class="caption black-text center-align">
 					<h3>Barreiras!</h3>
 					<h5 class="light black-text text-lighten-3">Quanto mais
@@ -70,15 +79,20 @@
 				</div></li>
 		</ul>
 	</div>
+	
+	
+			<div class="row"> </div>
+			<div class="row"> </div>
+			<div class="divider"> </div>
 
-	<div class="row indigo-text">
-		<div class="col s7 right">
+	<div class="row indigo-text center">
+		<div class="col s12 ">
 			<h3>JSmart Market News</h3>
 		</div>
 	</div>
 
 	<div class="row ">
-		<div class="col s4 ">
+		<div class="col s12 m4 ">
 			<div class="card">
 				<div class="card-image">
 					<img src="assets/media/img/img.cloud.png"> <span
@@ -91,7 +105,7 @@
 			</div>
 		</div>
 
-		<div class="col s3">
+		<div class="col s12 m3">
 			<div class="card-panel teal orange darken-1">
 				<span class="white-text">A adoção da nuvem já está quase
 					onipresente nas empresas brasileiras. Pelo menos é o que constatou
@@ -105,8 +119,14 @@
 
 	</div>
 
+
+			<div class="row"> </div>
+			<div class="divider"> </div>
+			<div class="row"> </div>
+			<div class="row"> </div>
+			
 	<div class="row">
-		<div class="col s3 right">
+		<div class="col s12 m3 right">
 			<div class="card-panel teal">
 				<span class="white-text">A Intel anunciou a compra da
 					Yogitech, fabricante de circuitos e software focada em recursos de
@@ -115,10 +135,10 @@
 			</div>
 		</div>
 
-		<div class="col s4 right">
+		<div class="col s12 m4 right">
 			<div class="card">
 				<div class="card-image">
-					<img src="assets/media/img/img.intel.jpg"> <span
+					<img src="assets/media/img/img.intel.png"> <span
 						class="card-title red-text"></span>
 				</div>
 				<div class="card-content">

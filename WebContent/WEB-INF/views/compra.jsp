@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -32,79 +32,83 @@
 
 	<nav>
 	<div class="nav-wrapper indigo">
-		<a href="#" class="brand-logo center orange-text">Pedidos JSmart
-			Market</a>
-		<ul id="nav-mobile" class="left hide-on-med-and-down">
+		<a href="paginaInicial" class="brand-logo"><img class="image"
+			src="assets/media/img/img.logo.png"></a> <a href="#"
+			data-activates="mobile-demo" class="button-collapse"><i
+			class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down">
 			<li><a href="paginaInicial">Página Inicial</a></li>
 			<li><a href="historia">História</a></li>
 			<li><a href="conta">Sua Conta</a></li>
-		</ul>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<a class="waves-effect waves-light red-text orange btn-large center"
+			<li><a
+				class="waves-effect waves-light black-text grey btn-large"
 				href="logout" id="logout"><i
-				class="material-icons right red-text">power_settings_new</i>Logout</a>
+					class="material-icons right red-text">power_settings_new</i>Logout</a></li>
+		</ul>
+		<ul class="side-nav" id="mobile-demo">
+			<li><a href="paginaInicial">Página Inicial</a></li>
+			<li><a href="hitoria">História</a></li>
+			<li><a href="conta">Sua Conta</a></li>
+			<li><a
+				class="waves-effect waves-light black-text grey btn-large"
+				href="logout" id="logout"><i
+					class="material-icons right red-text">power_settings_new</i>Logout</a></li>
 		</ul>
 	</div>
-
 	</nav>
 
 	<!-- cards -->
 
 	<div class="col s12">
-
 		<div class="row">
-			<div class="row">
-				<div class="col s10">
-					<h4 class="blue-text text-indigo">Bem vindo ${cliente.nome}
-						${cliente.sobrenome}</h4>
-				</div>
-				<div class="col s2 right">
-					<ul id="nav‐mobile" class="right hide‐on‐med‐and‐down">
-						<a class="waves‐effect waves‐light btn" href="conta"></i>Voltar</a>
-					</ul>
-				</div>
+			<div class="col s12 m2 right">
+				<ul id="nav‐mobile" class="right hide‐on‐med‐and‐down">
+					<a class="waves‐effect waves‐light btn" href="conta"></i>Voltar</a>
+				</ul>
 			</div>
 		</div>
+	</div>
 
-		<div class="row">
-			<div lass="row">
-				<div class="col s5">
-					<h5 class="black-text text-indigo">Forma de Pagamento:
-						${pagamento.descricao}</h5>
-				</div>
-				<div class="col s4">
-					<h5 class="black-text text-indigo">Data da Compra:
-						${compra.dataCompra}</h5>
-				</div>
-				<div class="col s3">
-					<h5 class="black-text text-indigo">Valor da Compra: R$
-						${compra.valorCompra}</h5>
-				</div>
+	<div class="row">
+		<div lass="row">
+			<div class="col s12 m5">
+				<h5 class="black-text text-indigo">Forma de Pagamento:
+					${pagamento.descricao}</h5>
+			</div>
+			<div class="col s12 m5">
+				<h5 class="black-text text-indigo">Data da Compra:
+					${compra.dataCompra}</h5>
+			</div>
+			<div class="col s12 m3">
+				<h5 class="black-text text-indigo">Valor da Compra: R$
+					${compra.valorCompra}</h5>
 			</div>
 		</div>
-		<table>
-			<thead>
+	</div>
+	<table class="responsive-table">
+		<thead>
+			<tr>
+
+				<th data-field="descricao">Descrição</th>
+				<th data-field="unidade">Unidade</th>
+				<th data-field="quantidade">Quantidade</th>
+				<th data-field="valorUnitario">Valor Unitário</th>
+				<th data-field="total">Valor Total</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<c:forEach var="itemDaCompra" items="${itemDaCompra}">
 				<tr>
-					<th data-field="descricao">Descrição</th>
-					<th data-field="unidade">Unidade</th>
-					<th data-field="quantidade">Quantidade</th>
-					<th data-field="valorUnitario">Valor Unitário</th>
-					<th data-field="total">Valor Total</th>
+					<td>${itemDaCompra.descricao}</td>
+					<td>${itemDaCompra.unidade}</td>
+					<td>${itemDaCompra.quantidade}</td>
+					<td>${itemDaCompra.valorUnitario}</td>
+					<td>${itemDaCompra.valor}</td>
 				</tr>
-			</thead>
-
-			<tbody>
-				<c:forEach var="itemDaCompra" items="${itemDaCompra}">
-					<tr>
-						<td>${itemDaCompra.descricao}</td>
-						<td>${itemDaCompra.unidade}</td>
-						<td>${itemDaCompra.quantidade}</td>
-						<td>${itemDaCompra.valorUnitario}</td>
-						<td>${itemDaCompra.valor}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+			</c:forEach>
+		</tbody>
+	</table>
 
 	</div>
 	</div>

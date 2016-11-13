@@ -85,7 +85,7 @@ public class JsmartController {
 	}
 
 	@RequestMapping("/login")
-	public String paginaInicial(Cliente cliente, HttpSession session, HttpServletRequest req, 
+	public String login(Cliente cliente, HttpSession session, HttpServletRequest req, 
 			HttpServletResponse res){
 		
 		String senha = gerarSenha(cliente.getSenha());

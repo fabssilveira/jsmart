@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -28,40 +28,55 @@
 <body>
 
 	<nav>
-	</ul>
-	<ul id="nav-mobile" class="left hide-on-med-and-down">
-		<a class="waves-effect red-text white btn-large center-right"
-			href="conta"><i class="material-icons right red-text">fast_rewind</i>Voltar</a>
-	</ul>
-	<div class="nav-wrapper ">
+	<div class="nav-wrapper indigo">
+		<a href="paginaInicial" class="brand-logo"><img class="image"
+			src="assets/media/img/img.logo.png"></a> <a href="#"
+			data-activates="mobile-demo" class="button-collapse"><i
+			class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down">
 
-		<div class="row right">
-			<img class="logo col s3" src="assets/media/img/img.logo.png"></img>
-			<h5>JSmart Market</h5>
-		</div>
+			<li><a
+				class="waves-effect waves-light black-text white btn-large"
+				href="conta" ><i
+					class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
+		</ul>
+		<ul class="side-nav" id="mobile-demo">
+
+			<li><a
+				class="waves-effect waves-light black-text white btn-large"
+				href="conta" ><i
+					class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
+		</ul>
 	</div>
 	</nav>
 
 	<div class="row col s12 indigo"></div>
 
+	<div class=" row red-text text-lighten-2">
+				<i class="large material-icons left indigo-text ">recent_actors</i>
+				<h3>Meus Dados</h3>
+				<P><h5>Alteração</h5>
+			</div>
+						
+			<div class="divider black"> </div>
+			<div class="row"> </div>
+			<div class="row"> </div>
 	
 
 	<div class="container">
 
-		<!-- Nome e Sobre Nome -->
-		<div class=" row red-text text-lighten-2">
-			<i class="large material-icons left indigo-text">insert_chart</i>
-			<h3>Meus Dados</h3>
-		</div>
+			<form class="col s12" action="alteraCliente" method="Post">
 
-
-		<div class=" row red-text text-lighten-2">
-			<h5>Dados Cadastrais</h5>
-		</div>
-
-		<div class="row">
-
-			<div class="col s4">
+			
+			
+			<div class=" row red-text text-lighten-2">
+				<h5>Dados Cadastrais</h5>
+			</div>
+			
+			<!-- Nome e Sobre Nome -->
+		
+			<div class="row">
+			<div class="col s12 m4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">perm_identity</i>
 					<input disabled value="${cliente.nome}" id="nome"
@@ -71,7 +86,7 @@
 				</div>
 			</div>
 
-			<div class="col s4">
+			<div class="col s12 m4">
 				<div class="input-field">
 					<input disabled value="${cliente.sobrenome}" id="sobrenome"
 						name="sobrenome" type="text" class="validate black-text">
@@ -79,14 +94,15 @@
 					</label>
 				</div>
 			</div>
+			</div>
 
-		</div>
+		
 
 		<!-- documentos -->
 
 		<div class="row">
 
-			<div class="col s3">
+			<div class="col s8 m3">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">
 						done_all</i> <input disabled value="${cliente.rg}" id="rg"
@@ -97,7 +113,7 @@
 				</div>
 			</div>
 
-			<div class="col s2">
+			<div class="col s4 m2">
 				<div class="input-field">
 					<input disabled value="${cliente.expedidor}" id="orgao"
 						name="expedidor" type="text" 
@@ -107,7 +123,7 @@
 				</div>
 			</div>
 
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="input-field">
 					<input disabled value="${cliente.cpf}" id="cpf" name="cpf"
 						type="text" class="validate black-text"> <label
@@ -122,7 +138,7 @@
 
 		<div class="row">
 
-			<div class="col s4">
+			<div class="col s12 m4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo"> today</i> <input
 						disabled value="${cliente.dataNascimento}" id="date"
@@ -140,7 +156,7 @@
 
 		<div class="row">
 
-			<div class="col s4">
+			<div class="col s12 m4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">
 						mode_edit</i> <input disabled value="${cliente.logradouro}"
@@ -151,7 +167,7 @@
 				</div>
 			</div>
 
-			<div class="col s1">
+			<div class="col s12 m1">
 				<div class="input-field">
 					<input disabled value="${cliente.numero}" id="numero"
 						name="numero" type="text" class="validate black-text"> <label
@@ -161,7 +177,7 @@
 				</div>
 			</div>
 
-			<div class="col s3">
+			<div class="col s12 m3">
 				<div class="input-field">
 					<input disabled value="${cliente.bairro}" id="bairro"
 						name="bairro" type="text" class="validate black-text"> <label
@@ -176,7 +192,7 @@
 
 		<div class="row">
 
-			<div class="col s4">
+			<div class="col s12 m4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">
 						location_on</i> <input disabled value="${cliente.cidade}"
@@ -187,7 +203,7 @@
 				</div>
 			</div>
 
-			<div class="col s2">
+			<div class="col s6 m2">
 				<div class="input-field">
 					<input disabled value="${cliente.uf}" id="uf" name="uf"
 						type="text" class="validate black-text"> <label for="uf"><h6>
@@ -196,7 +212,7 @@
 				</div>
 			</div>
 
-			<div class="col s2">
+			<div class="col s6 m2">
 				<div class="input-field">
 					<input disabled value="${cliente.cep}" id="CEP" name="cep"
 						type="text" class="validate black-text"> <label
@@ -209,7 +225,7 @@
 
 		<div class="row">
 
-			<div class="col s4">
+			<div class="col s12 m4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">phone</i> <input
 						disabled value="${cliente.telefone}" id="residencial"
@@ -220,7 +236,7 @@
 				</div>
 			</div>
 
-			<div class="col s4">
+			<div class="col s12 m4">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">stay_primary_portrait</i>
 					<input disabled value="${cliente.celular}" id="celular"
@@ -233,7 +249,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col s5">
+			<div class="col s12 m5">
 				<div class="input-field">
 					<i class="material-icons prefix grey-text text-indigo">email</i> <input
 						disabled value="${cliente.email}" id="email" name="email"

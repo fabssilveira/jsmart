@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,35 +27,53 @@
 <body>
 
 	<nav>
-	<ul id="nav-mobile" class="left hide-on-med-and-down">
-		<a class="waves-effect red-text white btn-large center-right"
-			href="index.jsp"><i class="material-icons right red-text">fast_rewind</i>Voltar</a>
-	</ul>
-	<div class="nav-wrapper ">
+	<div class="nav-wrapper indigo">
+		<a href="index.jsp" class="brand-logo"><img class="image"
+			src="assets/media/img/img.logo.png"></a> <a href="#"
+			data-activates="mobile-demo" class="button-collapse"><i
+			class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down">
 
-		<div class="row right">
-			<img class="logo col s3" src="assets/media/img/img.logo.png"></img>
-			<h5>Cadastro JSmart Market</h5>
-		</div>
+			<li><a
+				class="waves-effect waves-light black-text white btn-large"
+				href="index.jsp"><i class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
+		</ul>
+		<ul class="side-nav" id="mobile-demo">
+
+			<li><a
+				class="waves-effect waves-light black-text white btn-large"
+				href="index.jsp"><i class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
+		</ul>
 	</div>
 	</nav>
 
 	<div class="row col s12 indigo"></div>
 
+	<!-- Nome e Sobre Nome -->
+	<div class=" row red-text text-lighten-2">
+		<i class="large material-icons left indigo-text ">insert_chart</i>
+		<h4>Cadastrando os Meus Dados</h4>
+		<P>
+		<h5>Cadastro</h5>
+	</div>
+
+	<div class="divider black"></div>
+	<div class="row"></div>
+	<div class="row"></div>
 	<div class="container">
 
 		<form class="col s12" action="gravaCliente" method="Post"
 			id="form-cadastro">
 
 			<!-- Nome e Sobre Nome -->
-
-			<div class=" row
-			red-texttext-lighten-2">
-				<h4>Dados Cadastrais</h4>
+			<div class=" row red-text text-lighten-2">
+				<h5>Dados Cadastrais</h5>
 			</div>
+
 			<div class="row">
 
-				<div class="col s4">
+
+				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">perm_identity</i>
 						<input id="nome" name="nome" type="text" class="validate">
@@ -64,7 +82,7 @@
 					</div>
 				</div>
 
-				<div class="col s4">
+				<div class="col s12 m4">
 					<div class="input-field">
 						<input id="sobrenome" name="sobrenome" type="text"
 							class="validate"> <label for="sobrenome"> <b>Sobrenome</b>
@@ -75,11 +93,12 @@
 			</div>
 
 
+
 			<!-- endereÃ§o -->
 
 			<div class="row">
 
-				<div class="col s4">
+				<div class="col s12 m4">
 					<div class="input-field ">
 						<i class="material-icons prefix blue-text text-indigo">
 							mode_edit</i> <input id="endereço" name="logradouro" type="text"
@@ -89,7 +108,7 @@
 					</div>
 				</div>
 
-				<div class="col s1">
+				<div class="col s12 m1">
 					<div class="input-field">
 						<input id="numero" name="numero" type="text" class="validate">
 						<label for="numero"><h6>
@@ -98,7 +117,7 @@
 					</div>
 				</div>
 
-				<div class="col s3">
+				<div class="col s12 m3">
 					<div class="input-field">
 						<input id="bairro" name="bairro" type="text" class="validate">
 						<label for="bairro"><h6>
@@ -112,7 +131,7 @@
 
 			<div class="row">
 
-				<div class="col s4">
+				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">
 							location_on</i> <input id="cidade" name="cidade" type="text"
@@ -122,7 +141,7 @@
 					</div>
 				</div>
 
-				<div class="col s2">
+				<div class="col s6 m2">
 					<div class="input-field">
 						<select name="uf">
 							<option value="" disabled selected>Selecione aqui</option>
@@ -135,7 +154,7 @@
 					</div>
 				</div>
 
-				<div class="col s2">
+				<div class="col s6 m2">
 					<div class="input-field">
 						<input id="CEP" name="cep" type="text" class="validate"> <label
 							for="numero"><h6>
@@ -149,7 +168,7 @@
 
 			<div class="row">
 
-				<div class="col s4">
+				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">phone</i> <input
 							id="residencial" name="telefone" type="tel" class="validate">
@@ -159,7 +178,7 @@
 					</div>
 				</div>
 
-				<div class="col s4">
+				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">stay_primary_portrait</i>
 						<input id="celular" name="celular" type="tel" class="validate">
@@ -174,7 +193,7 @@
 
 			<div class="row">
 
-				<div class="col s3">
+				<div class="col s8 m3">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">
 							done_all</i> <input id="rg" name="rg" type="text" class="validate">
@@ -184,16 +203,16 @@
 					</div>
 				</div>
 
-				<div class="col s2">
+				<div class="col s4 m2">
 					<div class="input-field">
 						<input id="orgao" name="expedidor" type="text" class="validate">
 						<label for="orgao"><h6>
-								<b>Org. Expedidor</b>
+								<b>Org. Exped.</b>
 							</h6></label>
 					</div>
 				</div>
 
-				<div class="col s3">
+				<div class="col s12 m3">
 					<div class="input-field">
 						<input id="cpf" name="cpf" type="text" class="validate"> <label
 							for="cpf"><h6>
@@ -207,7 +226,7 @@
 
 			<div class="row">
 
-				<div class="col s4">
+				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo"> today</i>
 						<input id="date" name="dataNascimento" type="date"
@@ -222,7 +241,7 @@
 
 			<div class="row">
 
-				<div class="col s5">
+				<div class="col s12 m5">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">email</i> <input
 							id="email" name="email" type="email" class="validate"> <label
@@ -233,6 +252,13 @@
 				</div>
 			</div>
 
+
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row"></div>
+
+			<div class="divider black"></div>
+			<div class="row"></div>
 			<!-- login de acesso -->
 
 			<div class="row red-text text-lighten-2">
@@ -241,7 +267,8 @@
 
 			<div class="row">
 
-				<div class="col s4">
+
+				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix green-text">perm_identity</i> <input
 							id="login" name="userLogin" type="text" class="validate"
@@ -256,7 +283,7 @@
 
 			<div class="row">
 
-				<div class="col s4">
+				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix green-text">vpn_key</i> <input
 							id="senha" name="senha" type="password" class="validate">
@@ -266,7 +293,7 @@
 					</div>
 				</div>
 
-				<div class="col s4">
+				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix green-text">replay</i> <input
 							id="confirmasenha" name="confirmaSenha" type="password"
