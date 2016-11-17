@@ -2,7 +2,6 @@
 <html>
 <head>
 
-<!--Import materialize.css-->
 <link type="text/css" rel="stylesheet"
 	href="assets/lib/materialize/css/google_fonts.css"
 	media="screen,projection" />
@@ -11,11 +10,9 @@
 	href="assets/lib/materialize/css/materialize.min.css"
 	media="screen,projection" />
 
-<!-- Import JSmartMarket CSS -->
 <link type="text/css" rel="stylesheet" href="assets/css/jsmart.css"
 	media="screen,projection" />
 
-<!--Let browser know website is optimized for mobile-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -30,25 +27,15 @@
 				<div class="row">
 					<div class="col s12">
 						<div class="input-image">
-
 							<img class="image" src="assets/media/img/img.logo.png"><b></b>
 							<a class="waves-effect red btn modal-trigger right"
 								href="#modal1">Login / Cadastro</a>
 						</div>
 
-						<!-- Modal Trigger -->
-
-
-
-
 						<div id="modal1" class="modal">
 							<div class="modal-content center">
-
 								<h4>Acesso</h4>
-
 								<div class="row">
-
-
 									<div class="col s12 m12 indigo darken-4">
 										<div class="input-field col s11 m11">
 											<i class="material-icons prefix indigo-text">account_circle</i>
@@ -56,9 +43,7 @@
 												class="validate"> <label for="icon_prefix"></label>
 										</div>
 									</div>
-
 									<div class="row"></div>
-
 									<div class="col s12 m12 indigo darken-4">
 										<div class="input-field col s11 m11">
 											<i class="material-icons prefix indigo-text">vpn_key</i> <input
@@ -67,20 +52,17 @@
 										</div>
 									</div>
 								</div>
-
-
-
 								<div class="modal-footer indigo">
 									<button type="submit" name="action"
 										class=" modal-action modal-close indigo white-text indigo darken-4 btn-flat col s4 m4">Entrar</button>
 									<a href="formulario"
 										class=" modal-action modal-close indigo orange-text indigo darken-1 btn-flat left col s6 m3"><b>Cadastrar</b></a>
 								</div>
-
 								<div class="row"></div>
 								<div class="divider"></div>
-								<a href="formulario"
-									class=" modal-action modal-close indigo orange-text text-darken-2 btn-flat col s8 m3">Esqueci	a senha</a>
+								<a href="esqueciSenha"
+									class=" modal-action modal-close indigo orange-text text-darken-2 btn-flat col s8 m3">Esqueci
+									a senha</a>
 							</div>
 						</div>
 					</div>
@@ -89,14 +71,8 @@
 		</div>
 	</nav>
 
-
-	<!-- Conteudo do Site -->
 	<div id="content">
-		<!-- Cabecalho conteudo -->
-
-
 		<div class="row center blue-text">
-
 			<h3>Ofertas</h3>
 		</div>
 		<div class="row">
@@ -174,13 +150,12 @@
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="row"></div>
 		<div class="divider"></div>
 		<div class="row"></div>
 		<div class="row"></div>
 
-		<!-- Cabecalho conteudo -->
 		<div class="row center blue-text">
 			<h3>Produtos Recomendados</h3>
 		</div>
@@ -265,7 +240,6 @@
 		<div class="row"></div>
 
 		<div class="row center green-text">
-
 			<h3>Diferencial</h3>
 		</div>
 
@@ -321,14 +295,12 @@
 		</div>
 	</div>
 
-	<!-- Rodape -->
 	<footer class="page-footer  indigo">
 		<div class="footer-copyright">
 			<div class="container center">2016 Copyright JSmart Market</div>
 		</div>
 	</footer>
 
-	<!--Import JavaScript-->
 	<script type="text/javascript"
 		src="assets/lib/jquery/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript"

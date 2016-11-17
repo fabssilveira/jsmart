@@ -107,6 +107,11 @@ public class JsmartController {
 		return "formulario";
 	}
 	
+	@RequestMapping("/esqueciSenha")
+	public String esqueciSenha(){
+		return "esqueciSenha";
+	}
+	
 	@RequestMapping("/historia")
 	public String historia(HttpSession session){
 		if(session.getAttribute("usuarioLogado") != null){

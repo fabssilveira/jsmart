@@ -18,7 +18,8 @@
 <!--Let browser know website is optimized for mobile-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -31,43 +32,43 @@
 						<div class="input-image">
 
 							<img class="image" src="assets/media/img/img.logo.png"><b></b>
-							<a class="waves-effect red btn modal-trigger right" href="#modal1">Login
-							/ Cadastro</a>
+							<a class="waves-effect red btn modal-trigger right"
+								href="#modal1">Login / Cadastro</a>
 						</div>
 
 						<!-- Modal Trigger -->
 
-						
 
-							
-							<div id="modal1" class="modal">
+
+
+						<div id="modal1" class="modal">
 							<div class="modal-content center">
 
 								<h4>Acesso</h4>
 
 								<div class="row">
-								
-								
+
+
 									<div class="col s12 m12 indigo darken-4">
 										<div class="input-field col s11 m11">
-										<i class="material-icons prefix indigo-text">account_circle</i>
-										<input id="icon_prefix" type="text"  name="userLogin" class="validate">
-										<label for="icon_prefix"></label>
+											<i class="material-icons prefix indigo-text">account_circle</i>
+											<input id="icon_prefix" type="text" name="userLogin"
+												class="validate"> <label for="icon_prefix"></label>
 										</div>
 									</div>
-								
-								<div class="row"></div>
 
-								<div class="col s12 m12 indigo darken-4">
-									<div class="input-field col s11 m11">
+									<div class="row"></div>
+
+									<div class="col s12 m12 indigo darken-4">
+										<div class="input-field col s11 m11">
 											<i class="material-icons prefix indigo-text">vpn_key</i> <input
-											id="icon_prefix" type="password"   name="senha" class="validate"> <label
-											for="icon_prefix"></label>
+												id="icon_prefix" type="password" name="senha"
+												class="validate"> <label for="icon_prefix"></label>
 										</div>
 									</div>
 								</div>
-								
-								
+
+
 
 								<div class="modal-footer indigo">
 									<button type="submit" name="action"
@@ -75,13 +76,12 @@
 									<a href="formulario"
 										class=" modal-action modal-close indigo orange-text indigo darken-1 btn-flat left col s6 m3"><b>Cadastrar</b></a>
 								</div>
-								
-								<div class="row"> </div>
-								<div class="divider"> </div>
-								<button type="submit" name="action"
-										class=" modal-action modal-close indigo red-text  text-darken-2 btn-flat col s8 m3">Esqueci a senha</button>
-		
-								
+
+								<div class="row"></div>
+								<div class="divider"></div>
+								<a href="esqueciSenha"
+									class=" modal-action modal-close indigo orange-text text-darken-2 btn-flat col s8 m3">Esqueci
+									a senha</a>
 							</div>
 						</div>
 					</div>
@@ -89,15 +89,15 @@
 			</form>
 		</div>
 	</nav>
-		
+
 
 	<!-- Conteudo do Site -->
 	<div id="content">
 		<!-- Cabecalho conteudo -->
-	
-	
+
+
 		<div class="row center blue-text">
-		
+
 			<h3>Ofertas</h3>
 		</div>
 		<div class="row">
@@ -176,11 +176,11 @@
 			</div>
 		</div>
 
-		<div class="row"> </div>
-		<div class="divider"> </div>
-		<div class="row"> </div>
-		<div class="row"> </div>
-		
+		<div class="row"></div>
+		<div class="divider"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+
 		<!-- Cabecalho conteudo -->
 		<div class="row center blue-text">
 			<h3>Produtos Recomendados</h3>
@@ -259,17 +259,17 @@
 				</div>
 			</div>
 		</div>
-		
-		<div class="row"> </div>
-		<div class="divider"> </div>
-		<div class="row"> </div>
-		<div class="row"> </div>	
-		
+
+		<div class="row"></div>
+		<div class="divider"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+
 		<div class="row center green-text">
-		
+
 			<h3>Diferencial</h3>
 		</div>
-		
+
 		<div class="row">
 			<div class="col s12 m3">
 				<div class="center promo promo-example">
@@ -328,10 +328,10 @@
 			<div class="container center">2016 Copyright JSmart Market</div>
 		</div>
 	</footer>
-	
+
 	<script type="text/javascript">
 		var teste = '${erroLogin}';
-		if(teste != ''){
+		if (teste != '') {
 			alert('Senha inválida! Tente Novamente.')
 		}
 	</script>

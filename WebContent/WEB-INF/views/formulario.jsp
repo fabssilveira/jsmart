@@ -76,7 +76,7 @@
 				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">perm_identity</i>
-						<input id="nome" name="nome" type="text" class="validate">
+						<input id="nome" name="nome" type="text" class="validate" onchange="corrigeNome()">
 						<label for="nome"> <b id="lblNome">Nome</b>
 						</label>
 					</div>
@@ -171,7 +171,7 @@
 				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">phone</i> <input
-							id="residencial" name="telefone" type="tel" class="validate">
+							id="residencial" name="telefone" type="tel" class="validate" onchange="corrigeTel()">
 						<label for="residencial"><h6>
 								<b id="lblTel">Telefone Residencial</b>
 								<h6></label>
@@ -214,7 +214,7 @@
 
 				<div class="col s12 m3">
 					<div class="input-field">
-						<input id="cpf" name="cpf" type="text" class="validate"> <label
+						<input id="cpf" name="cpf" type="text" class="validate" onchange="corrigeCpf()"> <label
 							for="cpf"><h6>
 								<b id="lblCpf">CPF</b>
 							</h6></label>
@@ -244,7 +244,7 @@
 				<div class="col s12 m5">
 					<div class="input-field">
 						<i class="material-icons prefix blue-text text-indigo">email</i> <input
-							id="email" name="email" type="email" class="validate"> <label
+							id="email" name="email" type="email" class="validate" onchange="corrigeEmail()"> <label
 							for="email" data-error="wrong" data-success="right"><h6>
 								<b id="lblEmail">E-mail</b>
 							</h6></label>
@@ -297,7 +297,7 @@
 					<div class="input-field">
 						<i class="material-icons prefix green-text">replay</i> <input
 							id="confirmasenha" name="confirmaSenha" type="password"
-							class="validate"> <label for="confirmasenha"><h6>
+							class="validate" onchange="corrigeSenha()"> <label for="confirmasenha"><h6>
 								<b id="lblSenha">Confirmar Senha</b>
 							</h6></label>
 					</div>
@@ -324,8 +324,35 @@
 			$.get("testaLogin?login=" + $('#login').val(), function(resposta) {
 				var lblLogin = document.querySelector("#lblLogin");
 				alert('Login já existente! Escolha outro por favor!');
+				lblLogin.textContent = "Login"
+				lblLogin.style.color = "grey"
 				document.getElementById("login").value = "";
 			});
+		}
+		function corrigeNome(){
+			var lblNome = document.querySelector("#lblNome");
+			lblNome.textContent = "Nome";
+			lblNome.style.color = "grey";
+		}
+		function corrigeCpf(){
+			var lblCpf = document.querySelector("#lblCpf");
+			lblCpf.textContent = "CPF";
+			lblCpf.style.color = "grey";
+		}
+		function corrigeTel(){
+			var lblTel = document.querySelector("#lblTel");
+			lblTel.textContent = "Telefone Residencial";
+			lblTel.style.color = "grey";
+		}
+		function corrigeEmail(){
+			var lblEmail = document.querySelector("#lblEmail");
+			lblEmail.textContent = "E-Mail";
+			lblEmail.style.color = "grey";
+		}
+		function corrigeSenha(){
+			var lblSenha = document.querySelector("#lblSenha");
+			lblSenha.textContent = "Confirmar Senha";
+			lblSenha.style.color = "grey";
 		}
 	</script>
 
@@ -335,5 +362,6 @@
 	<script type="text/javascript"
 		src="assets/lib/materialize/js/materialize.min.js"></script>
 	<script type="text/javascript" src="assets/js/jsmart.js"></script>
+	<script type="text/javascript" src="assets/js/cadastro.js"></script>
 </body>
 </html>

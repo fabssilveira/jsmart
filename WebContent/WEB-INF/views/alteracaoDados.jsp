@@ -6,7 +6,6 @@
 <html>
 <head>
 
-<!--Import materialize.css-->
 <link type="text/css" rel="stylesheet"
 	href="assets/lib/materialize/css/google_fonts.css"
 	media="screen,projection" />
@@ -15,11 +14,9 @@
 	href="assets/lib/materialize/css/materialize.min.css"
 	media="screen,projection" />
 
-<!-- Import JSmartMarket CSS -->
 <link type="text/css" rel="stylesheet" href="assets/css/jsmart.css"
 	media="screen,projection" />
 
-<!--Let browser know website is optimized for mobile-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -38,22 +35,19 @@
 
 			<li><a
 				class="waves-effect waves-light black-text white btn-large"
-				href="conta" ><i
-					class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
+				href="conta"><i class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
 		</ul>
 		<ul class="side-nav" id="mobile-demo">
 
 			<li><a
 				class="waves-effect waves-light black-text white btn-large"
-				href="conta" ><i
-					class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
+				href="conta"><i class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
 		</ul>
 	</div>
 	</nav>
 
 	<div class="row col s12 indigo"></div>
 
-	<!-- Nome e Sobre Nome -->
 	<div class=" row red-text text-lighten-2">
 		<i class="large material-icons left indigo-text ">input</i>
 		<h3>Meus Dados</h3>
@@ -67,13 +61,9 @@
 
 	<div class="container">
 		<form class="col s12" action="alteraCliente" method="Post">
-
-
-
 			<div class=" row red-text text-lighten-2">
 				<h5>Dados Cadastrais</h5>
 			</div>
-
 
 			<div class="row">
 
@@ -97,8 +87,6 @@
 				</div>
 
 			</div>
-
-			<!-- documentos -->
 
 			<div class="row">
 
@@ -132,8 +120,6 @@
 				</div>
 			</div>
 
-			<!-- data de nascimento -->
-
 			<div class="row">
 
 				<div class="col s12 m4">
@@ -151,8 +137,7 @@
 			<div class=" row red-text text-lighten-2">
 				<h5>Endereço</h5>
 			</div>
-			<!-- endereÃ§o -->
-
+		
 			<div class="row">
 
 				<div class="col s12 m4">
@@ -184,8 +169,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- cidade -->
 
 			<div class="row">
 
@@ -222,8 +205,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- telefone -->
 
 			<div class="row">
 
@@ -298,16 +279,13 @@
 			</div>
 		</form>
 	</div>
-
-
-	<!-- Rodape -->
+	
 	<footer class="page-footer  indigo">
 	<div class="footer-copyright">
 		<div class="container center">2016 Copyright JSmart Market</div>
 	</div>
 	</footer>
 
-	<!--Import JavaScript-->
 	<script type="text/javascript"
 		src="assets/lib/jquery/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript"
