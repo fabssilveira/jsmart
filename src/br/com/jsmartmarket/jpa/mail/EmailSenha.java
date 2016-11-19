@@ -6,7 +6,7 @@ import org.apache.commons.mail.SimpleEmail;
 
 import br.com.jsmartmarket.jpa.model.Cliente;
 
-public class EmailAgenda {
+public class EmailSenha {
 
 	public void enviaEmailNovaSenha(Cliente cliente, String senha) throws EmailException {
 		
