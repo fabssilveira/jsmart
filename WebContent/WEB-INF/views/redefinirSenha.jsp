@@ -36,14 +36,14 @@
 
 			<li><a
 				class="waves-effect waves-light black-text white btn-large"
-				href="logout" id="logout"><i
+				href="meusDados" ><i
 					class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
 		</ul>
 		<ul class="side-nav" id="mobile-demo">
 
 			<li><a
 				class="waves-effect waves-light black-text white btn-large"
-				href="logout" id="logout"><i
+				href="meusDados" ><i
 					class="material-icons right red-text">fast_rewind</i>Voltar</a></li>
 		</ul>
 	</div>
