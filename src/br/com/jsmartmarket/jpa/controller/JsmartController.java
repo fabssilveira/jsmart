@@ -111,6 +111,14 @@ public class JsmartController {
 	public String esqueciSenha() {
 		return "esqueciSenha";
 	}
+	
+	@RequestMapping("/redefinirSenha")
+	public String redefinirSenha(HttpSession session) {
+		if (session.getAttribute("usuarioLogado") != null) {
+			return "redefinirSenha";
+		}
+		return "redirect:index.jsp";
+	}
 
 	@RequestMapping("/gerarNovaSenha")
 	public String gerarNovaSenha(String userLogin, String email, HttpSession session) throws EmailException {
@@ -132,6 +140,25 @@ public class JsmartController {
 		} else {
 			return "erro";
 		}
+	}
+	
+	@RequestMapping("/alterarSenha")
+	public String alterarSenha(String userLogin, String senha, String novaSenha,
+			HttpSession session){
+		if (session.getAttribute("usuarioLogado") != null) {
+			
+			Cliente cliente = clienteDao.buscaLogin(userLogin);
+			String testeSenha = gerarSenha(senha);
+			
+			if(cliente != null && cliente.getSenha().equals(testeSenha)){
+				String senhaAlterada = gerarSenha(novaSenha);
+				cliente.setSenha(senhaAlterada);
+				return "sucessoRedefinir";
+			}else{
+				return "erroRedefinir";
+			}
+		}
+		return "redirect:index.jsp";
 	}
 
 	@RequestMapping("/historia")

@@ -319,7 +319,7 @@
 	</div>
 	</footer>
 
-	<script = type="text/javascript">
+	<script type="text/javascript">
 		function testaLogin(id) {
 			$.get("testaLogin?login=" + $('#login').val(), function(resposta) {
 				var lblLogin = document.querySelector("#lblLogin");

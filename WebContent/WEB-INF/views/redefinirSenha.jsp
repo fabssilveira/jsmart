@@ -63,7 +63,7 @@
 	<div class="row"></div>
 	<div class="container">
 
-		<form class="col s12" action="alteraSenha" method="Post"
+		<form class="col s12" action="alterarSenha" method="Post"
 			id="form-redefinirSenha">
 
 			<div class="row">
@@ -71,7 +71,7 @@
 				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix orange-text">perm_identity</i> <input
-							id="login" name="userLogin" type="text" class="validate">
+							id="login" name="userLogin" type="text" class="validate" onchange="corrigeLogin()">
 						<label for="login"><h6>
 								<b id="lblLogin">Login</b>
 							</h6></label>
@@ -86,9 +86,9 @@
 				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix orange-text">vpn_key</i> <input
-							id="senha" name="senha" type="password" class="validate">
+							id="senha" name="senha" type="password" class="validate" onchange="corrigeSenha()">
 						<label for="senha"><h6>
-								<b>Senha Atual</b>
+								<b id="lblSenha">Senha Atual</b>
 							</h6></label>
 					</div>
 				</div>
@@ -105,7 +105,7 @@
 				<div class="col s12 m4">
 					<div class="input-field">
 						<i class="material-icons prefix green-text">replay</i> <input
-							id="novaSenha" name="novaSenha" type="password" class="validate">
+							id="novaSenha" name="novaSenha" type="password" class="validate" onchange="corrigeNovaSenha()">
 						<label for="novaSenha"><h6>
 								<b id="lblNovaSenha">Nova Senha</b>
 							</h6></label>
@@ -139,6 +139,24 @@
 		<div class="container center">2016 Copyright JSmart Market</div>
 	</div>
 	</footer>
+
+	<script type="text/javascript">
+		function corrigeLogin() {
+			var lblLogin = document.querySelector("#lblLogin");
+			lblLogin.textContent = "Login";
+			lblLogin.style.color = "grey";
+		}
+		function corrigeSenha() {
+			var lblSenha = document.querySelector("#lblSenha");
+			lblSenha.textContent = "Senha";
+			lblSenha.style.color = "grey";
+		}
+		function corrigeNovaSenha() {
+			var lblNovaSenha = document.querySelector("#lblNovaSenha");
+			lblNovaSenha.textContent = "Nova Senha";
+			lblNovaSenha.style.color = "grey";
+		}
+	</script>
 
 	<!--Import JavaScript-->
 	<script type="text/javascript"
