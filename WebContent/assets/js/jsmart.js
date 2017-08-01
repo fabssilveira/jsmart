@@ -13,8 +13,7 @@ $('.datepicker')
 		.pickadate(
 				{
 					selectMonths : true,// Creates a dropdown to control month
-					selectYears : 15,// Creates a dropdown of 15 years to
-					// control year
+					selectYears : 15,// Creates a dropdown of select years to control year
 					// The title label to use for the month nav buttons
 					labelMonthNext : 'Próximo Mês',
 					labelMonthPrev : 'Mês Anterior',
